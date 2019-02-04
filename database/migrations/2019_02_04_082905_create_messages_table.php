@@ -17,10 +17,9 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->integer('sender_id')->unsigned();
             $table->foreign('sender_id')->references('id')->on('users');
-            $table->string('subject');
             $table->text('content');
-            $table->integer('receive_id')->unsigned();
-            $table->foreign('receive_id')->references('id')->on('users');
+            $table->integer('receiver_id')->unsigned();
+            $table->foreign('receiver_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
