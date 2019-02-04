@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -15,7 +16,7 @@ class RegisterController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
+    | validation and creation. By default this c/ontroller uses a trait to
     | provide this functionality without requiring any additional code.
     |
     */
@@ -61,11 +62,18 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {    
         return User::create([
             'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => Hash::make($data['password']),
+            'blood_type' => $data['blood_type'],
+            'phone' => $data['phone'],
+            'city' => $data['city'],
+            'gender' => $data['gender'],
+            'birthdate' => $data['birthdate'],
+            'img' => $data['img'],
         ]);
     }
 }
