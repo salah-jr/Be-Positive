@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->integer('phone');
             $table->string('city');
+            $table->enum('gender',['Male','Female']); 
             $table->date('birthdate');
             $table->boolean('isadmin')->default(0);
             $table->boolean('available')->default(1);
