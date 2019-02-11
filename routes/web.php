@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/*Route::get('/', function () {
+    return view('userpages.index');
 });
+*/
+
+Route::get('/','HomeController@index');
+
+Route::get('profile/{id}','UserController@show');
+
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

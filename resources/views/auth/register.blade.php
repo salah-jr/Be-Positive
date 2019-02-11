@@ -38,7 +38,6 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -106,7 +105,6 @@
 
                         <div class="form-group">
                             <label for="img" class="col-md-4 control-label">Image</label>
-
                             <div class="col-md-6">
                                 <input type="text" name="img">
                             </div>
