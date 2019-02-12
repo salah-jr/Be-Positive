@@ -5,13 +5,13 @@
         <div class="row">
 
             <div class="col-lg-3"></div>
-
+      
             <div class="col-lg-6">
                 <div class="card">
                 <h3 class="card-header mt-0 text-center">&shy;{{$user->name}}</h3>  						
                     <div class="card-body">
                         <ul class="list-unstyled">
-                            <li><img src="images/2.jpg"  width="100%" height="300px"></li>
+                            <li><img src="users/usersimgages/{{$user->img}}"  alt="{{$user->img}}" width="100%"> </li>
                         </ul> 
                                 
                         <ul class="list-unstyled text-right" style="direction: ltr">

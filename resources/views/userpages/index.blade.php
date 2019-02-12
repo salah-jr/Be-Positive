@@ -49,7 +49,7 @@
 
 		<div class="col-lg-12">
 			<ul id="portfolio-flters">
-			<li data-filter=".filter-O-Plus, filter-O-Negative, .filter-A-Plus, .filter-A-Negative, .filter-B-Plus, .filter-B-Negative, .filter-AB-Plus, .filter-AB-Negative font-weight-bold" class="filter-active"> كل الفصائل</li>
+			<li data-filter=".filter-O-Plus, filter-O-Negative, .filter-A-Plus, .filter-A-Negative, .filter-B-Plus, .filter-B-Negative, .filter-AB-Plus,.filter-AB-Negative font-weight-bold"  class="filter-active ml-auto"> كل الفصائل</li>
 			<li data-filter=".filter-O-Plus">O+</li>
 			<li data-filter=".filter-O-Negative">O-</li>
 			<li data-filter=".filter-A-Plus">A+</li>
@@ -74,7 +74,8 @@
 				<h3 class="card-header mt-0 text-center">&shy; {{$user->name}}</h3>						
 					<div class="card-body">
 						<ul class="list-unstyled">
-							<li><img src="images/1.jpg"  width="100%" height="200px"></li>
+								{{-- "img/{{$post->image_name}}" --}}
+							<li><img src="users/usersimgages/{{$user->img}}"  width="100%" height="200px"></li>
 						</ul> 
 						<ul class="list-unstyled text-right" style="direction: ltr">
 							<li>&shy; {{$user->city}} &shy; <i class="fa fa-home fa-lg mt-1"></i></li>
@@ -106,7 +107,7 @@
 				<h3 class="card-header mt-0 text-center">&shy; {{$user->name}}</h3>						
 					<div class="card-body">
 						<ul class="list-unstyled">
-							<li><img src="images/1.jpg"  width="100%" height="200px"></li>
+							<li><img src="users/usersimgages/{{$user->img}}"  width="100%" height="200px"></li>
 						</ul> 
 						<ul class="list-unstyled text-right" style="direction: ltr">
 							<li>&shy; {{$user->city}} &shy; <i class="fa fa-home fa-lg mt-1"></i></li>
@@ -138,7 +139,7 @@
 				<h3 class="card-header mt-0 text-center">&shy; {{$user->name}}</h3>						
 					<div class="card-body">
 						<ul class="list-unstyled">
-							<li><img src="images/1.jpg"  width="100%" height="200px"></li>
+							<li><img src="users/usersimgages/{{$user->img}}" width="100%" height="200px"></li>
 						</ul> 
 						<ul class="list-unstyled text-right" style="direction: ltr">
 							<li>&shy; {{$user->city}} &shy; <i class="fa fa-home fa-lg mt-1"></i></li>
@@ -171,7 +172,7 @@
 				<h3 class="card-header mt-0 text-center">&shy; {{$user->name}}</h3>						
 					<div class="card-body">
 						<ul class="list-unstyled">
-							<li><img src="images/1.jpg"  width="100%" height="200px"></li>
+							<li><img src="users/usersimgages/{{$user->img}}"  width="100%" height="200px"></li>
 						</ul> 
 						<ul class="list-unstyled text-right" style="direction: ltr">
 							<li>&shy; {{$user->city}} &shy; <i class="fa fa-home fa-lg mt-1"></i></li>
@@ -203,7 +204,7 @@
 				<h3 class="card-header mt-0 text-center">&shy; {{$user->name}}</h3>						
 					<div class="card-body">
 						<ul class="list-unstyled">
-							<li><img src="images/1.jpg"  width="100%" height="200px"></li>
+							<li><img src="users/usersimgages/{{$user->img}}" width="100%" height="200px"></li>
 						</ul> 
 						<ul class="list-unstyled text-right" style="direction: ltr">
 							<li>&shy; {{$user->city}} &shy; <i class="fa fa-home fa-lg mt-1"></i></li>
@@ -234,7 +235,7 @@
 				<h3 class="card-header mt-0 text-center">&shy; {{$user->name}}</h3>						
 					<div class="card-body">
 						<ul class="list-unstyled">
-							<li><img src="images/1.jpg"  width="100%" height="200px"></li>
+							<li><img src="users/usersimgages/{{$user->img}}" width="100%" height="200px"></li>
 						</ul> 
 						<ul class="list-unstyled text-right" style="direction: ltr">
 							<li>&shy; {{$user->city}} &shy; <i class="fa fa-home fa-lg mt-1"></i></li>
@@ -266,7 +267,7 @@
 				<h3 class="card-header mt-0 text-center">&shy; {{$user->name}}</h3>						
 					<div class="card-body">
 						<ul class="list-unstyled">
-							<li><img src="images/1.jpg"  width="100%" height="200px"></li>
+							<li><img src="users/usersimgages/{{$user->img}}"  width="100%" height="200px"></li>
 						</ul> 
 						<ul class="list-unstyled text-right" style="direction: ltr">
 							<li>&shy; {{$user->city}} &shy; <i class="fa fa-home fa-lg mt-1"></i></li>
@@ -298,7 +299,7 @@
 				<h3 class="card-header mt-0 text-center">&shy; {{$user->name}}</h3>						
 					<div class="card-body">
 						<ul class="list-unstyled">
-							<li><img src="images/1.jpg"  width="100%" height="200px"></li>
+							<li><img src="users/usersimgages/{{$user->img}}" width="100%" height="200px"></li>
 						</ul> 
 						<ul class="list-unstyled text-right" style="direction: ltr">
 							<li>&shy; {{$user->city}} &shy; <i class="fa fa-home fa-lg mt-1"></i></li>
@@ -468,7 +469,7 @@
 		
 				<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
 					<div class="member">
-					<img src="{{asset('users/images/salah.jpg')}}" class="img-fluid" alt="">
+					<img src="{{asset('users/images/salah.jpeg')}}" class="img-fluid" alt="">
 					<div class="member-info">
 						<div class="member-info-content">
 						<h4>Mohamed Salah</h4>
@@ -507,43 +508,49 @@
 </section>
 <!-- end of our team -->
 
-<!-- contact us -->
-<div id="contactUs">
-	<div class="container">
-	<h2 class="text-center"> إتصل بنا</h2><br>
-	<div class="row">
-		<div class="col-lg-6">
-					<div class="about">
-						<h3 class="text-center">   يمكنك متابعتناوكذلك يمكنك الإتصال بنا </h3><br>
-						<h4 class="text-center"><i class="fa fa-phone fa-lg"></i> +20 286 217 0891</h4><br>
+	<!-- contact us -->
+	<div id="contactUs">
+			<h2 class="text-center pt-5 font-weight-bold"> <i class="fa fa-thumbs-up"></i> للتواصل معنا <i class="fa fa-smile-o"></i></h2>
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+					<h3 class="text-center">   يمكنك متابعتناوكذلك يمكنك الإتصال بنا </h3>
+					<h4 class="text-center"><i class="fa fa-phone fa-lg"></i> +20 286 217 0891</h4><br>
+					<div>
+							<form class="text-center mx-auto">
+									<div class="row">
+											<div class="col">
+												<div class="input-group wow bounceInLeft">
+													<input type="email" class="form-control" name="username"placeholder=" الإيميل " required="reauired">
+													<span class="input-group-addon"><i class="fa fa-envelope fa-lg"></i></span>
+												</div><br>
+											</div>
+											<div class="col">
+													<div class="input-group margin-bottom-sm wow bounceInRight">
+														<input type="text" class="form-control" name="name"placeholder=" اسم المستحدم " required="required">
+														<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
+													</div>
+												</div>
+										</div>
+									<textarea class="form-control wow bounceInDown" cols="5" rows="5" placeholder="الرسالة"></textarea><br>
+									<button class="btn btn-success text-center"> <i class="fa fa-sign-out"></i> إرسال</button><br>
+							</form>
+						
 						<div class="text-center icons">
-							<a href="#"><i class="fa fa-facebook fa-lg m-3"></i></a>
-							<a href="#"><i class="fa fa-youtube fa-lg mr-3"></i></a>
-							<a href="#"><i class="fa fa-google-plus fa-lg mr-3"></i></a>
-							<a href="#"><i class="fa fa-twitter fa-lg "></i></a>
-						</div>
+								<a href="#"><i class="fa fa-facebook fa-lg m-3"></i></a>
+								<a href="#"><i class="fa fa-youtube fa-lg mr-3"></i></a>
+								<a href="#"><i class="fa fa-google-plus fa-lg mr-3"></i></a>
+								<a href="#"><i class="fa fa-twitter fa-lg "></i></a>
+						</div>		
 					</div>
-		</div>
-		<div class="col-lg-6">
-			<div class="contactUs">
-				<form>
-						<div class="input-group margin-bottom-sm">
-								<input type="text" class="form-control" placeholder="  الإسم  " required>
-								<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-						</div><br>
-						<div class="input-group margin-bottom-sm">
-								<input type="email" class="form-control" placeholder="  الإيميل  " required>
-								<span class="input-group-addon"><i class="fa fa-envelope fa-lg"></i></span>
-						</div><br>
-						<textarea class="form-control" placeholder="الرسالة"></textarea><br>
-						<button class="btn btn-success btn-block"> <i class="fa fa-sign-out"></i> إرسال</button><br>
-				</form>
+			</div>
+			<div class="col-lg-6">
+				
 			</div>
 		</div>
+		</div>
 	</div>
-	</div>
-</div>
-<!-- end of contact us -->
+	<!-- end of contact us -->
 @endsection	
 		
 	

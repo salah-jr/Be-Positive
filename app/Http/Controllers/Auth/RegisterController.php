@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'username' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            // 'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     }
 
@@ -64,17 +65,45 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {    
+        if (Input::hasfile($data['img'])) {
+            $image = Input::file($data['img']);
+            $name = $image->getClientOriginalName();
+            // $size = $image->getClientSize();
+            $destinationPath = public_path('users/images');
+            $image->move($destinationPath, $name);
+             $userImage->img = $name;
+            // $userImage->size = $size;
+            dd($userImage);
+           // $userImage->save;
+    }
+
+    // $image=$Request->file('img');
+    //     $input['img']=$image->getClientOriginalName();
+    //     $destination=public_path('/users/imagesusers');
+    //     $image->move($destination,  $input['img']);
+        // $companyInformation->company_image=  $input['img'];
+
+        if(Input::hasfile($data['img'])){
+            $image = Input::file($data['avatar']);
+            $input['img']=$image->getClientOriginalName();
+            //     $destination=public_path('/users/imagesusers');
+            //     $image->move($destination,  $input['img']);
+                // $companyInformation->company_image=  $input['img'];
+        }
+
+
+
         return User::create([
-            'name' => $data['name'],
+            'name'=> $data['name'],
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'blood_type' => $data['blood_type'],
             'phone' => $data['phone'],
-            'city' => $data['city'],
+            // 'city' => $data['city'],
             'gender' => $data['gender'],
             'birthdate' => $data['birthdate'],
-            'img' => $data['img'],
+            'img' => $name
         ]);
     }
 }

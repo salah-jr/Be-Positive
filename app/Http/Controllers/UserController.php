@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Hash;
 class UserController extends Controller
 {
     /**
@@ -34,7 +35,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $user=new User;
+            $image = $request->file('img');
+            $name = $image->getClientOriginalName();
+            $destinationPath = public_path('users/usersimgages');
+            $image->move($destinationPath, $name);
+            $user->img = $name;
+            $user->name = $request->name;
+            $user->username = $request->username;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->blood_type = $request->blood_type;
+            $user->phone = $request->phone;
+            $user->city = $request->city;
+            $user->gender = $request->gender;
+            $user->birthdate = $request->birthdate;
+            $user->save();
+            return back();
     }
 
     /**

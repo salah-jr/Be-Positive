@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Revision</title>
+		<title>أحسان</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="{{asset('users/css/bootstrap.css')}}">
@@ -24,12 +24,14 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent" style="direction: rtl">
 					<ul class="navbar-nav ml-auto">
+							@guest
 						<li class="nav-item">
 							<a href="#" class="nav-link registrationForm"><i class="fa fa-sign-in fa-lg"></i> إنشاء حساب</a>
 						</li>	
 						<li class="nav-item">
 							 <a href="#" class="nav-link logInForm"><i class="fa fa-user-circle fa-lg"></i>  تسجيل الدخول </a>
 						</li>
+
 						<li class="nav-item">
 							<a class="nav-link" href="/"><i class="fa fa-home fa-lg"></i>  الرئيسية</a>
 						</li>
@@ -42,6 +44,41 @@
 						<li class="nav-item">
 							<a class="nav-link" href="#contactUs"> إتصل بنا  <i class="fa fa-envelope fa-lg"></i></a>
 						</li>
+						@else
+
+						<li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+									<li> <a href="profile/{{ Auth::user()->id }}"> الملف الشخصي </a></li>
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            خروج
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+									</li>
+									
+                                </ul>
+							</li>
+						<li class="nav-item">
+								<a class="nav-link" href="/"><i class="fa fa-home fa-lg"></i>  الرئيسية</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#portfolio"><i class="fa fa-opera fa-lg"></i> الفصائل </a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#"> الجمعيات <i class="fa fa-university"></i></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#contactUs"> إتصل بنا  <i class="fa fa-envelope fa-lg"></i></a>
+							</li>
+						@endguest
 					</ul>
 				</div>
 			</div>
@@ -57,13 +94,14 @@
 				<img src="{{asset('users/images/logo.jpg')}}" style="max-width: 100%;height: 150px">
 				<span  class="close w3-button w3-xlarge w3-transparent w3-display-topright w3-dark-gray" title="Close Modal"><i class="fa fa-close"></i></span>
 			</div>
-			<form class="container">
+			<form class="container" method="POST" action="{{ route('login') }}">
+					{{ csrf_field() }}
 				<div class="input-group margin-bottom-sm">
-					<input type="text" class="form-control" placeholder=" اسم المستحدم " required="required">
+					<input  type="text" class="form-control" placeholder=" اسم المستحدم "  name="username" required="required">
 					<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
 				</div><br>	
 				<div class="input-group margin-bottom-sm">
-					<input type="password" class="form-control" placeholder=" كلمة المرور" required="reauired">
+					<input type="password" class="form-control" placeholder=" كلمة المرور"  name="password" required="reauired">
 					<span class="input-group-addon"><i class="fa fa-key fa-lg"></i></span>
 				</div>
 				<div class="form-check w3-right">
@@ -91,20 +129,20 @@
 				
 				<span  class="close w3-button w3-xlarge w3-transparent w3-display-topright w3-dark-gray" title="Close Modal"><i class="fa fa-close"></i></span>
 			</div>
-			<form class="container-fluid" method="POST" action="{{ route('register') }}">
+			<form class="container-fluid"  method="POST" action="/insert" enctype="multipart/form-data">
 				{{ csrf_field() }}
 				<div class="step1">
 					<img src="{{asset('users/images/logo.jpg')}}" style="width: 100%;height: 150px">
 					<div class="row">
 						<div class="col">
 							<div class="input-group margin-bottom-sm">
-								<input type="text" class="form-control" name="name"placeholder=" اسم المستحدم " required="required">
+								<input type="text" class="form-control" name="username"placeholder=" اسم المستحدم " required="required">
 								<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
 							</div>
 						</div>
 						<div class="col">
 							<div class="input-group">
-								<input type="text" class="form-control" name="username"placeholder=" إسم الدخول " required="reauired">
+								<input type="text" class="form-control" name="name"placeholder=" الاسم " required="reauired">
 								<span class="input-group-addon"><i class="fa fa-user-o fa-lg"></i></span>
 							</div><br>
 						</div>
@@ -112,7 +150,7 @@
 					<div class="row">
 						<div class="col">
 							<div class="input-group margin-bottom-sm">
-								<input type="password" class="form-control" name="password" placeholder="تأكيد  كلمة المرور " required="reauired">
+								<input type="password" class="form-control" name="password_confirmation" placeholder="تأكيد  كلمة المرور " required="reauired">
 								<span class="input-group-addon"><i class="fa fa-key fa-lg"></i></span>
 							</div><br>
 						</div>
@@ -136,17 +174,35 @@
 
 				<div class="step2" style="display:none;">
 					<br>
+					<br>
+					<div class="input-group margin-bottom-sm">
+						<select class="form-control"  name="city" style="direction: rtl">
+						
+							<option selected="true" disabled="disabled">اختر الدوله</option>
+							<option value="Asyut">Asyut</option>
+							<option value="Mina">Mina</option>
+							<option value="Sohag">Sohag</option>
+							<option value="Quna">Quna</option>
+							<option value="Louxor">Louxor</option>
+							<option value="Gizza">Gizza</option>
+							<option value="Benswif">Benswif</option>
+						</select>
+						<span class="input-group-addon"><i class="fa fa-home fa-lg"></i></span>
+					</div><br>
+
+
+
 					<div class="input-group margin-bottom-sm">
 						<select class="form-control"  name="blood_type" style="direction: rtl">
 							<option selected="true" disabled="disabled">فصيلة الدم</option>
-							<option>A</option>
-							<option>A+</option>
-							<option>B</option>
-							<option>B+</option>
-							<option>AB</option>
-							<option>AB+</option>
-							<option>O+</option>
-							<option>O-</option>
+							<option value="A+">A+</option>
+							<option value="A-">A-</option>
+							<option value="B+">B+</option>
+							<option value="B-">B-</option>
+							<option value="AB-">AB-</option>
+							<option value="AB+">AB+</option>
+							<option value="O+">O+</option>
+							<option value="O-">O-</option>
 						</select>
 						<span class="input-group-addon"><i class="fa fa-tint fa-lg"></i></span>
 					</div><br>
@@ -155,7 +211,7 @@
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="show-img">
-										<img id='img-upload'/>
+										<img  name='img' id='img-upload'/>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -163,7 +219,7 @@
 										<span class="input-group-btn">
 											<input type="text" class="form-control" readonly>
 											<span class="btn btn-danger btn-file">
-												اختار صورة <input type="file" id="input-img">
+												اختار صورة <input type="file"  name="img" id="input-img">
 											</span>
 										</span>
 									</div>
@@ -180,13 +236,13 @@
 						<div class="form-check mr-4">
 							<label class="form-check-label">
 									
-										<input type="radio" class="form-check-input" name="gender"> ذكر 
+										<input type="radio" class="form-check-input" value="male" name="gender"> ذكر 
 								
 							</label>
 						</div>
 						<div class="form-check mr-4">
 							<label class="form-check-label">
-								<input type="radio" class="form-check-input" name="gender"> انثي
+								<input type="radio" class="form-check-input" value="female" name="gender"> انثي
 							</label>
 						</div>
 					</div>

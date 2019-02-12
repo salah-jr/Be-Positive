@@ -20,9 +20,12 @@ Route::get('/','HomeController@index');
 
 Route::get('profile/{id}','UserController@show');
 
+Route::post('/insert','UserController@store');
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home',function(){
+  return view('loololo');
+});
 
