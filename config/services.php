@@ -13,7 +13,12 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
-
+   
+      'twitter' => [
+        'client_id' => 'TrGmxtiFvMVQdghQOkAlTtVe',
+        'client_secret' => 'Iz2LybMy67fV4wwHw25UPzmnXcBQYxTfjGw4sK71Q0RRsRtZh5',
+        'redirect' => 'http://127.0.0.1:8000/login/twitter/callback'
+      ],
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
