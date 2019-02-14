@@ -5,51 +5,33 @@
 <!--==========================
     Hero Section
   ============================-->
+
   <section id="hero">
     <div class="hero-container">
-      <h1>Welcome to Regna</h1>
-      <h2>We are team of talanted designers making websites with Bootstrap</h2>
-      <a href="#about" class="btn-get-started">Get Started</a>
+      <h1>Welcome to B+</h1>
+      <br>
+      <h2>If you can't do great things, do small things in a great way</h2>
+      <a href="#portfolio" class="btn-get-started">Get Started</a>
     </div>
-  </section><!-- #hero -->
+    <div class="scroll">
+      <div class="mouse"></div>
+        {{-- <div class="scroll-arrow"></div> --}}
+    </div>
+
+    <div class="bg_video">
+        <video autoplay muted loop>
+            <source src="{{asset('users/videos/bg_video.mp4')}}" type="video/mp4">
+        </video>
+    </div>
+
+  </section>
+  <!-- #hero -->
+
+
+
 
   <main id="main">
-    <!--==========================
-      Facts Section
-    ============================-->
-    <section id="facts">
-      <div class="container wow fadeIn">
-        <div class="section-header">
-          <h3 class="section-title">Facts</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque</p>
-        </div>
-        <div class="row counters">
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">232</span>
-            <p>Clients</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">521</span>
-            <p>Projects</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1,463</span>
-            <p>Hours Of Support</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">15</span>
-            <p>Hard Workers</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- #facts -->
+   
 
 
   
@@ -61,9 +43,12 @@
     <section id="portfolio">
       <div class="container wow fadeInUp">
         <div class="section-header">
-          <h3 class="section-title">Portfolio</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque</p>
+          <h3 class="section-title">Donors</h3>
+          <p class="section-description">All users who are available to donate
+            <br>
+              <small>(Choose the blood type you need)</small>
+          </p>
+          
         </div>
         <div class="row">
 
@@ -151,19 +136,24 @@
 
 
   
-    @foreach ($users as $user)
-    @if ($user->blood_type=="B+")  
+    {{-- @foreach ($users as $user)
+    @if ($user->blood_type=="B+")   --}}
   <div class="col-lg-3 col-md-6 portfolio-item filter-B-Pos">
     <a href="">
-      <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      {{-- <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
       <div class="details">
         <h4> Name : {{$user->name}}</h4>
         <span> Blood Type: {{$user->blood_type}}</span>
+      </div> --}}
+      <img src="users/usersimgages/test.jpg" width=300 height=300 alt="">
+      <div class="details">
+        <h4> Ahmed Alaa</h4>
+        <span>A+</span>
       </div>
     </a>
   </div>
-  @endif
-  @endforeach
+  {{-- @endif
+  @endforeach --}}
 
   @foreach ($users as $user)
     @if ($user->blood_type=="B-")  
@@ -212,21 +202,54 @@
   @endif
   @endforeach
 
-
-      
-      
-      
-      
-        
-
       </div>
     </section><!-- #portfolio -->
-
+ <!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts">
+        <div class="container wow fadeIn">
+          <div class="section-header">
+            <h3 class="section-title">Facts</h3>
+            <p class="section-description">Global statiscs about blood donation in <small>per year</small></p>
+          </div>
+          <div class="row counters">
+  
+            <div class="col-lg-3 col-6 text-center">
+              <span data-toggle="counter-up">123 </span>
+              
+              <p>Collected Blood</p>
+            </div>
+  
+            <div class="col-lg-3 col-6 text-center">
+              <span data-toggle="counter-up">215</span>
+              <p>People Need</p>
+            </div>
+  
+            <div class="col-lg-3 col-6 text-center">
+              <span data-toggle="counter-up">150</span>
+              <p>children</p>
+            </div>
+  
+            <div class="col-lg-3 col-6 text-center">
+              <span data-toggle="counter-up">9,155</span>
+              <p>Deaths</p>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- #facts -->
 
     <!--==========================
           charities Section
     ============================-->
+    
     <section id="charities">
+        <div class="section-header">
+            <h3 class="section-title">Collaborators</h3>
+            <br>
+        </div>
       <div class="container wow fadeIn">
         <div class="customer-logos slider">
           <div class="slide"><img src="{{asset('users/img/Charities/0120.png')}}"></div>
@@ -254,20 +277,18 @@
     <section id="team">
       <div class="container wow fadeInUp">
         <div class="section-header">
-          <h3 class="section-title">Team</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque</p>
+          <h3 class="section-title">Meet Our Team</h3>
+          <p class="section-description"></p>
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-6">
             <div class="member">
               <div class="pic"><img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt=""></div>
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
+              <h4>Ahmed Alaa</h4>
+              <span>Front-end developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-github"></i></a>
                 <a href=""><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
@@ -276,12 +297,11 @@
           <div class="col-lg-3 col-md-6">
             <div class="member">
               <div class="pic"><img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt=""></div>
-              <h4>Sarah Jhinson</h4>
-              <span>Product Manager</span>
+              <h4>Mohammed Salah</h4>
+              <span>Fullstack Web Developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-github"></i></a>
                 <a href=""><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
@@ -290,12 +310,11 @@
           <div class="col-lg-3 col-md-6">
             <div class="member">
               <div class="pic"><img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt=""></div>
-              <h4>William Anderson</h4>
-              <span>CTO</span>
+              <h4>Momen Adel</h4>
+              <span>Back-end Developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-github"></i></a>
                 <a href=""><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
@@ -304,12 +323,11 @@
           <div class="col-lg-3 col-md-6">
             <div class="member">
               <div class="pic"><img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt=""></div>
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
+              <h4>Mohammed Essa</h4>
+              <span>Front-end developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-github"></i></a>
                 <a href=""><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
@@ -333,7 +351,8 @@
 
       <!-- Uncomment below if you wan to use dynamic maps -->
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452"
+   
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5019.143013720076!2d31.171614250924147!3d27.185534716103376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14450bfcc66b0f27%3A0x5c93b0105928bd21!2sInformation+Technology+Institute+-+ITI!5e0!3m2!1sen!2seg!4v1550179544936"
         width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
 
       <div class="container wow fadeInUp mt-5">
@@ -362,7 +381,7 @@
               <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
               <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
               <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="github"><i class="fa fa-github"></i></a>
               <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
             </div>
 

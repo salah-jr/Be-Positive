@@ -27,7 +27,13 @@ jQuery(document).ready(function ($) {
     },
     speed: 400
   });
+  var card = $(".text-hover");
 
+$(document).on("mousemove",function(e) {  
+  var ax = -($(window).innerWidth()/2- e.pageX)/20;
+  var ay = ($(window).innerHeight()/2- e.pageY)/10;
+  card.attr("style", "transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-webkit-transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-moz-transform: rotateY("+ax+"deg) rotateX("+ay+"deg)");
+});
   // Mobile Navigation
   if ($('#nav-menu-container').length) {
     var $mobile_nav = $('#nav-menu-container').clone().prop({

@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Regna Bootstrap Template</title>
+	<title>Be Positive</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content="" name="keywords">
 	<meta content="" name="description">
@@ -52,7 +52,7 @@ Header
 		<nav id="nav-menu-container">
 			<ul class="nav-menu">
 				<li class="menu-active"><a href="#hero">Home</a></li>
-				<li><a href="#portfolio">Blood</a></li>
+				<li><a href="#portfolio">Donors</a></li>
 				<li><a href="#charities">Charities</a></li>
 				<li><a href="#team">Team</a></li>
 				<li><a href="#contact">Contact Us</a></li>
@@ -257,10 +257,10 @@ Header
 
 	<div class="container">
 		<div class="copyright">
-			&copy; Copyright <strong>Regna</strong>. All Rights Reserved
+			&copy; Copyright <strong>B+</strong>. All Rights Reserved
 		</div>
 		<div class="credits">
-			Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+			Made with love by <a href="#">Hamo2a Team</a>
 		</div>
 	</div>
 </footer>

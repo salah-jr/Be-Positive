@@ -1,7 +1,7 @@
 .modal { background-color: rgba(55, 62, 67,0.5);}
 .modal-content {
 	background-color: rgba(55, 62, 67,0.9);
-	box-shadow: 2px 2px 10px 0px #2dc997cc;
+	box-shadow: 2px 2px 10px 0px #DDD;
 	border-radius: 5px;
 }
 .close {
@@ -55,7 +55,7 @@
     font-size: 36px;
 }
 .modal-body span,
-.modal-body label{color:#27AE60;}
+.modal-body label{color:#ee6f57;}
 .slideDownAnimation {
 	animation-name: slideDownAnimation;
 	-webkit-animation-name: slideDownAnimation;
@@ -88,13 +88,13 @@
 
 
 .step-Header{
-	color:#27AE60;
+	color:#ee6f57;
 	font-weight: bolder;
 	text-align: center;
 }
 .progress-bar{
 	color: #fff;
-	background-color: #27AE60;
+	background-color: #ee6f57;
 }
 
 
@@ -108,7 +108,7 @@
   }
   
   button {
-	background-color: #27AE60;
+	background-color: #ee6f57;
 	color: #ffffff;
 	border: none;
 	padding: 10px 20px;
@@ -139,10 +139,10 @@
   
   .step.active {
 	opacity: 1;
-	background-color: #27AE60;
+	background-color: #ee6f57;
   }
   
   /* Mark the steps that are finished and valid: */
   .step.finish {
-	background-color: #27AE60;
+	background-color: #ee6f57;
   }
