@@ -51,6 +51,10 @@ Header
 
 		<nav id="nav-menu-container">
 			<ul class="nav-menu">
+
+				@guest
+				{{-- <li><a href="{{ route('login') }}">Login</a></li>
+				<li><a href="{{ route('register') }}">Register</a></li> --}}
 				<li class="menu-active"><a href="#hero">Home</a></li>
 				<li><a href="#portfolio">Blood</a></li>
 				<li><a href="#charities">Charities</a></li>
@@ -58,6 +62,32 @@ Header
 				<li><a href="#contact">Contact Us</a></li>
 				<li><a href="" data-toggle="modal" data-target="#registration">Register</a></li>
 				<li><a href="" data-toggle="modal" data-target="#login"> Login</a></li>
+			 	@else
+				<li class="menu-active"><a href="#hero">Home</a></li>
+				<li><a href="#portfolio">Blood</a></li>
+				<li><a href="#charities">Charities</a></li>
+				<li><a href="#team">Team</a></li>
+				<li><a href="#contact">Contact Us</a></li>
+				<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								{{ Auth::user()->name}} 
+						</a>
+						<ul>
+								<li>
+										<a href="{{ route('logout') }}"
+												onclick="event.preventDefault();
+																 document.getElementById('logout-form').submit();">
+												Logout
+										</a>
+
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+												{{ csrf_field() }}
+										</form>
+								</li>
+						</ul>
+				</li> 
+				@endguest
+
 			</ul>
 		</nav><!-- #nav-menu-container -->
 	</div>
@@ -219,14 +249,28 @@ Header
 				<i class='fas fa-lock p-3'> </i>
 			</div>
 			<div class="modal-body">
-				<form action="" class="modal-form">
-					<div class="form-group">
-						<label for="mail-phone">Email address or Phone number:</label>
-						<input type="text" class="form-control" id="mail-phone">
+				<form  class="modal-form" method="POST" action="{{ route('login') }}">
+					{{ csrf_field() }}
+					<div class="form-group {{ $errors->has('username') ? ' has-error' : '' }}">
+						<label for="mail-phone">User name or Email :</label>
+						<input type="text"  name="username" class="form-control" id="mail-phone">
+						
+						@if ($errors->has('username'))
+						<span class="help-block">
+								<strong>{{ $errors->first('username') }}</strong>
+						</span>
+		    		@endif
 					</div>
-					<div class="form-group">
+					<div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
 						<label for="pwd">Password:</label>
 						<input type="password" name="password" class="form-control" id="pwd">
+           
+						@if ($errors->has('password'))
+						<span class="help-block">
+								<strong>{{ $errors->first('password') }}</strong>
+						</span>
+  
+	    			@endif
 					</div>
 					<div class="form-group form-check d-flex  flex-wrap justify-content-between">
 						<label class="form-check-label">

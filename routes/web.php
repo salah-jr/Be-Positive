@@ -11,33 +11,32 @@
 |
 */
 
+
+// Route::get('/login/{social}','Auth\LoginController@socialLogin')
+//         ->where('social','twitter|facebook|linkedin|google|github');
+// Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')
+//         ->where('social','twitter|facebook|linkedin|google|github');
+
 /*Route::get('/', function () {
     return view('userpages.index');
 });
 */
 
+
+Route::get('/home','HomeController@index');
 Route::get('/','HomeController@index');
-
 Route::get('profile/{id}','UserController@show');
-
 Route::post('/insert','UserController@store');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/login/{social}','Auth\LoginController@socialLogin')
-        ->where('social','twitter|facebook|linkedin|google|github');
-Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')
-        ->where('social','twitter|facebook|linkedin|google|github');
-
 Auth::routes();
 
-Route::get('/home',function(){
-  return view('loololo');
+
+
+Route::group(['middleware'=>['admin','auth']],function(){
+    Route::get('dashboard', 'admin\AdminController@index');
+    Route::get('home', 'MassageController@index');
 });
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth', 'charity']], function()
+{
+    Route::get('charity', 'charity\CharityController@index');
+});

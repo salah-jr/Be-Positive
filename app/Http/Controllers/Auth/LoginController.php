@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = 'dashboard';
 
     /**
      * Create a new controller instance.
@@ -41,19 +41,24 @@ class LoginController extends Controller
     public function username(){
         return 'username';
     }
-    public function socialLogin($social) {
-        return Socialite::driver($social)->redirect();
-      }
+
+
+  //   public function phone(){
+  //     return 'phone';
+  // }
+    // public function socialLogin($social) {
+    //     return Socialite::driver($social)->redirect();
+    //   }
   
-      public function handleProviderCallback($social){
-        $userSocial = Socialite::driver($social)->user();
-        $user = User::where(['email' => $userSocial->getEmail()])->first();
-        if ($user) {
-          Auth::login($user);
-          return redirect()->action('HomeController@index');
-        } else {
-          return view('auth.register', ['name' => $userSocial->getName(),'email'=> $userSocial->getEmail()]);
-        }
-      }
-}
-    
+      // public function handleProviderCallback($social){
+      //   $userSocial = Socialite::driver($social)->user();
+      //   $user = User::where(['email' => $userSocial->getEmail()])->first();
+      //   if ($user) {
+      //     Auth::login($user);
+      //     return redirect()->action('HomeController@index');
+      //   } else {
+      //     return view('auth.register', ['name' => $userSocial->getName(),'email'=> $userSocial->getEmail()]);
+      //   }
+      // }
+
+      }    
