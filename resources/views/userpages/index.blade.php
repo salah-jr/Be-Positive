@@ -69,7 +69,7 @@
 
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter=".filter-app, .filter-card, .filter-logo, .filter-web" class="filter-active">All</li>
+              <li data-filter=".filter-O-Pos, .filter-O-Neg, .filter-A-Pos, .filter-B-Pos,.filter-B-Neg,.filter-AB-Pos,.filter-AB-Neg" class="filter-active">All</li>
               <li data-filter=".filter-O-Pos">O+</li>
               <li data-filter=".filter-O-Neg">O-</li>
               <li data-filter=".filter-A-Pos">A+</li>
@@ -83,128 +83,141 @@
         </div>
 
         <div class="row" id="portfolio-wrapper">
-          <div class="col-lg-3 col-md-6 portfolio-item filter-A-Neg">
+            @foreach ($users as $user)
+            @if ($user->blood_type=="O+")  
+          <div class="col-lg-3 col-md-6 portfolio-item filter-O-Pos">
             <a href="">
-              <img src="{{asset('users/img/portfolio/web2.jpg')}}" alt="">
+              <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
               <div class="details">
-                <h4>App 1</h4>
-                <span>Alored dono par</span>
+                <h4> Name : {{$user->name}}</h4>
+                <span> Blood Type: {{$user->blood_type}}</span>
               </div>
             </a>
           </div>
+          @endif
+          @endforeach
+        
+        
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-AB-Neg">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/web2.jpg')}}" alt="">
-              <div class="details">
-                <h4>Web 2</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-A-Neg">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/app3.jpg')}}" alt="">
-              <div class="details">
-                <h4>App 3</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-A-Pos">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/card1.jpg')}}" alt="">
-              <div class="details">
-                <h4>Card 1</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
           
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-B-Neg">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/card2.jpg')}}" alt="">
-              <div class="details">
-                <h4>Card 2</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-O-Neg">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/web3.jpg')}}" alt="">
-              <div class="details">
-                <h4>Web 3</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-O-Pos">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/card3.jpg')}}" alt="">
-              <div class="details">
-                <h4>Card 3</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-B-Pos">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/app2.jpg')}}" alt="">
-              <div class="details">
-                <h4>App 2</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-AB-Neg">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt="">
-              <div class="details">
-                <h4>Logo 1</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-O-Pos">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/logo3.jpg')}}" alt="">
-              <div class="details">
-                <h4>Logo 3</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-O-Neg">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/web1.jpg')}}" alt="">
-              <div class="details">
-                <h4>Web 1</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-AB-Pos">
-            <a href="">
-              <img src="{{asset('users/img/portfolio/logo2.jpg')}}" alt="">
-              <div class="details">
-                <h4>Logo 2</h4>
-                <span>Alored dono par</span>
-              </div>
-            </a>
-          </div>
-
+          @foreach ($users as $user)
+          @if ($user->blood_type=="O-")  
+        <div class="col-lg-3 col-md-6 portfolio-item filter-O-Neg">
+          <a href="">
+            <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+            <div class="details">
+              <h4> Name : {{$user->name}}</h4>
+              <span> Blood Type: {{$user->blood_type}}</span>
+            </div>
+          </a>
         </div>
+        @endif
+        @endforeach
+
+    
+          
+        @foreach ($users as $user)
+        @if ($user->blood_type=="A+")  
+      <div class="col-lg-3 col-md-6 portfolio-item filter-A-Pos">
+        <a href="">
+          <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+          <div class="details">
+            <h4> Name : {{$user->name}}</h4>
+            <span> Blood Type: {{$user->blood_type}}</span>
+          </div>
+        </a>
+      </div>
+      @endif
+      @endforeach
+
+
+      
+          
+      @foreach ($users as $user)
+      @if ($user->blood_type=="A-")  
+    <div class="col-lg-3 col-md-6 portfolio-item filter-A-Neg">
+      <a href="">
+        <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+        <div class="details">
+          <h4> Name : {{$user->name}}</h4>
+          <span> Blood Type: {{$user->blood_type}}</span>
+        </div>
+      </a>
+    </div>
+    @endif
+    @endforeach
+
+
+
+  
+    @foreach ($users as $user)
+    @if ($user->blood_type=="B+")  
+  <div class="col-lg-3 col-md-6 portfolio-item filter-B-Pos">
+    <a href="">
+      <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      <div class="details">
+        <h4> Name : {{$user->name}}</h4>
+        <span> Blood Type: {{$user->blood_type}}</span>
+      </div>
+    </a>
+  </div>
+  @endif
+  @endforeach
+
+  @foreach ($users as $user)
+    @if ($user->blood_type=="B-")  
+  <div class="col-lg-3 col-md-6 portfolio-item filter-B-Neg">
+    <a href="">
+      <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      <div class="details">
+        <h4> Name : {{$user->name}}</h4>
+        <span> Blood Type: {{$user->blood_type}}</span>
+      </div>
+    </a>
+  </div>
+  @endif
+  @endforeach
+
+
+
+  
+  @foreach ($users as $user)
+    @if ($user->blood_type=="AB+")  
+  <div class="col-lg-3 col-md-6 portfolio-item filter-AB-Pos">
+    <a href="">
+      <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      <div class="details">
+        <h4> Name : {{$user->name}}</h4>
+        <span> Blood Type: {{$user->blood_type}}</span>
+      </div>
+    </a>
+  </div>
+  @endif
+  @endforeach
+
+
+  
+  @foreach ($users as $user)
+    @if ($user->blood_type=="AB-")  
+  <div class="col-lg-3 col-md-6 portfolio-item filter-AB-Neg">
+    <a href="">
+      <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      <div class="details">
+        <h4> Name : {{$user->name}}</h4>
+        <span> Blood Type: {{$user->blood_type}}</span>
+      </div>
+    </a>
+  </div>
+  @endif
+  @endforeach
+
+
+      
+      
+      
+      
+        
 
       </div>
     </section><!-- #portfolio -->
