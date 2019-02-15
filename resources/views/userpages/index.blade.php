@@ -248,7 +248,7 @@
     <section id="charities">
         <div class="section-header">
             <h3 class="section-title">Collaborators</h3>
-            <br>
+            <br><br>
         </div>
       <div class="container wow fadeIn">
         <div class="customer-logos slider">
@@ -277,27 +277,32 @@
     <section id="team">
       <div class="container wow fadeInUp">
         <div class="section-header">
-          <h3 class="section-title">Meet Our Team</h3>
+          <h3 class="section-title">Our Talented Team</h3>
           <p class="section-description"></p>
         </div>
         <div class="row">
+
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt=""></div>
+              <div class="pic">
+                <img src="{{asset('users/img/avatar.png')}}" alt="">
+              </div>
               <h4>Ahmed Alaa</h4>
+              <div class="border"></div>
               <span>Front-end developer</span>
               <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-github"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-github"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt=""></div>
+              <div class="pic"><img src="{{asset('users/img/avatar.png')}}" alt=""></div>
               <h4>Mohammed Salah</h4>
+              <div class="border"></div>
               <span>Fullstack Web Developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
@@ -309,8 +314,9 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt=""></div>
+              <div class="pic"><img src="{{asset('users/img/avatar.png')}}" alt=""></div>
               <h4>Momen Adel</h4>
+              <div class="border"></div>
               <span>Back-end Developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
@@ -322,8 +328,9 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{asset('users/img/portfolio/logo1.jpg')}}" alt=""></div>
+              <div class="pic"><img src="{{asset('users/img/avatar.png')}}" alt=""></div>
               <h4>Mohammed Essa</h4>
+              <div class="border"></div>
               <span>Front-end developer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
