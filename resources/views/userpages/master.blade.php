@@ -33,7 +33,8 @@
 	<!-- Main Stylesheet File -->
 	<link href="{{asset('users/css/mainStyle.css')}}" rel="stylesheet">
 	<link href="{{asset('users/css/modal.css')}}" rel="stylesheet">
-
+	<link href="{{asset('users/css/profile.css.css')}}" rel="stylesheet">
+	<link href="{{asset('users/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
 
 </head>
 
@@ -60,7 +61,7 @@ Header
 				<li><a href="#charities">Charities</a></li>
 				<li><a href="#team">Team</a></li>
 				<li><a href="#contact">Contact Us</a></li>
-				<li><a href="" data-toggle="modal" data-target="#registration">Register</a></li>
+				<li><a href="{{ route('register') }}">Register</a></li>
 				<li><a href="" data-toggle="modal" data-target="#login"> Login</a></li>
 			 	@else
 				<li class="menu-active"><a href="#hero">Home</a></li>
@@ -70,6 +71,7 @@ Header
 				<li><a href="#contact">Contact Us</a></li>
 				<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								{{ Auth::user()->email}} 
 								{{ Auth::user()->name}} 
 						</a>
 						<ul>
@@ -92,153 +94,7 @@ Header
 		</nav><!-- #nav-menu-container -->
 	</div>
 </header><!-- #header -->
-<!---- registration modal----->
-<div class="modal" id="registration">
-	<div class="modal-dialog slideDownAnimation">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<span>Registration</span>
-				<i class='fab fa-wpforms p-3'> </i>
-			</div>
-			<div class="modal-body">
-				<div class="d-flex justify-content-between">
-					<span> Step 1</span>
-					<span> Step 2</span>
-				</div>
-				<div class="progress mb-5">
-					<div id="progressbar"class="progress-bar" style="width:0%"></div>
-				</div>
-				<form id="regForm" action="action.php" method="POST">
-					<div class="tab">
-						<h3 class="step-Header">STEP 1</h3>
-						<div class="form-group">
-							<input type="text" name="name" class="form-control" placeholder="name">
-						</div>
-						<div class="form-group">
-							<input type="text" name="username" class="form-control" placeholder="user name">
-						</div>
-						<div class="form-group">
-							<input type="email" class="form-control" placeholder="mail">
-						</div>
-						<div class="form-group">
-							<input type="password" name="password" class="form-control" placeholder="password">
-						</div>
-						<div class="form-group">
-							<input type="password" name="confirmpassword" class="form-control" placeholder="confirm password">
-						</div>
-					</div>
-					<div class="tab">
-						<h3 class="step-Header">STEP 2</h3>
-						<div class="form-group">
-							<input type="phone" name="phone" class="form-control" placeholder="phone number">
-						</div>
-						<div class="form-group">
-							<select class="form-control" name="city">
-								<option disabled selected="true">City</option>
-								<option>Assuit</option>
-								<option>cairo</option>
-								<option>Alex</option>
-								<option>malawy</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<input type="text" placeholder="date" name="birthdate" class="form-control" onfocus="(this.type='date')">
-						</div>
-						<div class="form-check-inline">
-							<label class="form-check-label">
-								<input type="radio" class="form-check-input" name="gender">male
-							</label>
-						</div>
-						<div class="form-check-inline">
-							<label class="form-check-label">
-								<input type="radio" class="form-check-input" name="gender"> female
-							</label>
-						</div>
-					</div>
-					<div class="mt-2">
-						<div class="d-flex justify-content-center">
-							<button type="button"  class="mr-2"id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-							<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-						</div>
-					</div>
-					<!-- Circles which indicates the steps of the form: -->
-					<div style="text-align:center;margin-top:40px;">
-						<span class="step"></span>
-						<span class="step"></span>
-					</div>
-				</form>
 
-
-
-
-
-
-
-
-
-
-				<!---- <form action="" class="modal-form">
-                    <div class="step1-registration">
-                      <h3 class="step1-Header">STEP 1</h3>
-                      <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="name">
-                      </div>
-                      <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="user name">
-                      </div>
-                      <div class="form-group">
-                        <input type="email" class="form-control" placeholder="mail">
-                      </div>
-                      <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="password">
-                      </div>
-                      <div class="form-group">
-                        <input type="password" name="confirmpassword" class="form-control" placeholder="confirm password">
-                      </div>
-                      <div class="d-flex justify-content-end">
-                        <button class="btn toStep2-btn"> Step 2</button>
-                      </div>
-                    </div>
-                    <div class="step2-registration">
-                      <div class="form-group">
-                        <input type="phone" name="phone" class="form-control" placeholder="phone number">
-                      </div>
-                      <div class="form-group">
-                        <select class="form-control" name="city">
-                          <option disabled selected="true">City</option>
-                          <option>Assuit</option>
-                          <option>cairo</option>
-                          <option>Alex</option>
-                          <option>malawy</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <input type="text" placeholder="date" name="birthdate" class="form-control" onfocus="(this.type='date')">
-                      </div>
-                      <div class="form-check-inline">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="gender">male
-                        </label>
-                      </div>
-                      <div class="form-check-inline">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="gender"> female
-                        </label>
-                      </div>
-                      <div class="d-flex justify-content-between mt-3">
-                        <button class="btn toStep1-btn"> Step 1</button>
-                        <input type="submit" class="btn submit" value="Finish">
-                      </div>
-                    </div>
-
-
-                  </form>
-                -->
-			</div>
-		</div>
-	</div>
-</div>
 <!---------login modal-------------->
 <div class="modal" id="login">
 	<div class="modal-dialog slideDownAnimation">
@@ -331,7 +187,7 @@ Header
 
 <script src="{{asset('users/js/main.js')}}"></script>
 <script src="{{asset('users/js/modal.js')}}"></script>
-
+<script src="{{asset('users/js/dropdownNotificationAndProfile.js')}}"></script>
 </body>
 
 </html>

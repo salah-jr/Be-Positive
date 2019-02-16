@@ -54,7 +54,7 @@
 
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter=".filter-O-Pos, .filter-O-Neg, .filter-A-Pos, .filter-B-Pos,.filter-B-Neg,.filter-AB-Pos,.filter-AB-Neg" class="filter-active">All</li>
+              <li data-filter=".filter-O-Pos, .filter-O-Neg, .filter-A-Pos, .filter-A-Neg, .filter-B-Pos,.filter-B-Neg,.filter-AB-Pos,.filter-AB-Neg" class="filter-active">All</li>
               <li data-filter=".filter-O-Pos">O+</li>
               <li data-filter=".filter-O-Neg">O-</li>
               <li data-filter=".filter-A-Pos">A+</li>
@@ -66,13 +66,13 @@
             </ul>
           </div>
         </div>
-
+        <br>
         <div class="row" id="portfolio-wrapper">
             @foreach ($users as $user)
             @if ($user->blood_type=="O+")  
-          <div class="col-lg-3 col-md-6 portfolio-item filter-O-Pos">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-O-Pos">
             <a href="">
-              <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+              <img src="storage/storage/users_images/{{$user->image}}" alt="">
               <div class="details">
                 <h4> Name : {{$user->name}}</h4>
                 <span> Blood Type: {{$user->blood_type}}</span>
@@ -88,9 +88,9 @@
           
           @foreach ($users as $user)
           @if ($user->blood_type=="O-")  
-        <div class="col-lg-3 col-md-6 portfolio-item filter-O-Neg">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-O-Neg">
           <a href="">
-            <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+            <img src="storage/storage/users_images/{{$user->image}}" alt="">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -104,9 +104,9 @@
           
         @foreach ($users as $user)
         @if ($user->blood_type=="A+")  
-      <div class="col-lg-3 col-md-6 portfolio-item filter-A-Pos">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-A-Pos">
         <a href="">
-          <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+          <img src="storage/storage/users_images/{{$user->image}}" alt="">
           <div class="details">
             <h4> Name : {{$user->name}}</h4>
             <span> Blood Type: {{$user->blood_type}}</span>
@@ -121,9 +121,9 @@
           
       @foreach ($users as $user)
       @if ($user->blood_type=="A-")  
-    <div class="col-lg-3 col-md-6 portfolio-item filter-A-Neg">
+    <div class="col-lg-4 col-md-6 portfolio-item filter-A-Neg">
       <a href="">
-        <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+        <img src="storage/storage/users_images/{{$user->image}}" alt="">
         <div class="details">
           <h4> Name : {{$user->name}}</h4>
           <span> Blood Type: {{$user->blood_type}}</span>
@@ -136,30 +136,25 @@
 
 
   
-    {{-- @foreach ($users as $user)
+    @foreach ($users as $user)
     @if ($user->blood_type=="B+")   --}}
-  <div class="col-lg-3 col-md-6 portfolio-item filter-B-Pos">
+  <div class="col-lg-4 col-md-6 portfolio-item filter-B-Pos">
     <a href="">
-      {{-- <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      <img src="" alt="">
       <div class="details">
         <h4> Name : {{$user->name}}</h4>
         <span> Blood Type: {{$user->blood_type}}</span>
-      </div> --}}
-      <img src="users/usersimgages/test.jpg" width=300 height=300 alt="">
-      <div class="details">
-        <h4> Ahmed Alaa</h4>
-        <span>A+</span>
       </div>
     </a>
   </div>
-  {{-- @endif
-  @endforeach --}}
+  @endif
+  @endforeach
 
   @foreach ($users as $user)
     @if ($user->blood_type=="B-")  
   <div class="col-lg-3 col-md-6 portfolio-item filter-B-Neg">
     <a href="">
-      <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      <img src="storage/storage/users_images/{{$user->image}}" alt="">
       <div class="details">
         <h4> Name : {{$user->name}}</h4>
         <span> Blood Type: {{$user->blood_type}}</span>
@@ -176,7 +171,7 @@
     @if ($user->blood_type=="AB+")  
   <div class="col-lg-3 col-md-6 portfolio-item filter-AB-Pos">
     <a href="">
-      <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      <img src="storage/storage/users_images/{{$user->image}}" alt="">
       <div class="details">
         <h4> Name : {{$user->name}}</h4>
         <span> Blood Type: {{$user->blood_type}}</span>
@@ -192,7 +187,7 @@
     @if ($user->blood_type=="AB-")  
   <div class="col-lg-3 col-md-6 portfolio-item filter-AB-Neg">
     <a href="">
-      <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+      <img src="storage/storage/users_images/{{$user->image}}" alt="">
       <div class="details">
         <h4> Name : {{$user->name}}</h4>
         <span> Blood Type: {{$user->blood_type}}</span>
