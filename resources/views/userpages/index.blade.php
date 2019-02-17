@@ -309,7 +309,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{asset('users/img/avatar.png')}}" alt=""></div>
+              <div class="pic"><img src="{{asset('users/img/avatar.png')}}" class="img-fluid" alt=""></div>
               <h4>Momen Adel</h4>
               <div class="border"></div>
               <span>Back-end Developer</span>
