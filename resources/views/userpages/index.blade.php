@@ -388,45 +388,6 @@
           </div>
 
           <div class="col-lg-5 col-md-8">
-              {{-- @if(Session::has('success'))
-              <div class="alert alert-success">
-                {{ Session::get('success') }}
-              </div>
-              @endif
-            <div class="form">
-              <div id="errormessage"></div>
-              <form  method="POST" action="contactus" role="form" class="contactForm">
-                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                  <span class="text-danger">{{ $errors->first('name') }}</span>
-                </div>
-                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                    data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                  <span class="text-danger">{{ $errors->first('email') }}</span>
-                </div>
-                <div class="form-group {{ $errors->has('subject') ? 'has-error' : '' }} ">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                    data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                  <span class="text-danger">{{ $errors->first('subject') }}</span>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control {{ $errors->has('message') ? 'has-error' : '' }}" name="message" rows="5" data-rule="required"
-                    data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                  <span class="text-danger">{{ $errors->first('message') }}</span>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </form>
-            </div>
-          </div>
-        </div> --}}
-
-
 
         <form method="POST" action="/contact" role="form" class="contactForm">
           {{ csrf_field() }}
@@ -448,26 +409,8 @@
           </div>
           <div class="text-center"><button type="submit">Send Message</button></div>
         </form>  
-      {{-- <form  method="POST" action="/contact" >
-        {{ csrf_field() }}
-        <label for="name" > name : </label>
-        <input type="text" id="name" name="name" >
-        <br>
       
-        <label for="email" > Email  :</label>
-        <input type="email" id="email" name="email" >
-        <br>
-         
-        <label for="subject" > Subject :</label>
-        <input type="text" id="subject" name="subject" >
-        <br>
 
-        <label for="message" > Message : </label>
-        <input type="text" id="message" name="message" >
-        <br>
-        <input type="submit" value="Send Masseage" >
-        <br>
-      </form> --}}
       </div>
     </section>
   </main>
