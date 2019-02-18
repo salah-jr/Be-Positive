@@ -44,7 +44,7 @@ class ContactController extends Controller
         ),function($message)
        {
         $message->from('momenadel3030@gmail.com','Admin momen');
-        $message->to('momen.adel.abdelhakeem@gmail.com', 'Admin 2')->subject('Important message');
+        $message->to('mohamed.salah21500@gmail.com', 'Admin 2')->subject('Important message');
        });
        
        return back();
