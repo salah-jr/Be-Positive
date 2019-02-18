@@ -137,6 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-fixed {
+  /* background: rgba(87, 0, 20,0.9); */
   background: rgba(52, 59, 64, 0.9);
   padding: 20px 0;
   height: 72px;
@@ -842,7 +843,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #team .member .pic img {
-  max-width: 100%;
+  width: 100%;
   border: 10px solid #f8f8f8;
   border-radius: 50%;
   transition: all 0.3s ease 0s;

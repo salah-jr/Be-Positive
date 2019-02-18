@@ -30,7 +30,7 @@
 	<!-- Main Stylesheet File -->
 	<link href="{{asset('users/css/mainStyle.css')}}" rel="stylesheet">
 	<link href="{{asset('users/css/modal.css')}}" rel="stylesheet">
-	<link href="{{asset('users/css/profile.css.css')}}" rel="stylesheet">
+	<link href="{{asset('users/css/profile.css')}}" rel="stylesheet">
 	<link href="{{asset('users/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
     <!--==========================
   Header
