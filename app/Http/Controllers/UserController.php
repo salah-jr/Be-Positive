@@ -50,13 +50,6 @@ class UserController extends Controller
             $user->city = $request->city;
             $user->gender = $request->gender;
             $user->birthdate = $request->birthdate;
-
-
-            // $fileNameWithextention = $request->input
-
-
-
-
             $user->save();
             return back();
     }
