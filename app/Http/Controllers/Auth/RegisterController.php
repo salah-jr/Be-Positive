@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'username' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            // 'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
     }
 
@@ -64,33 +64,24 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {    
-    //     if (Input::hasfile($data['img'])) {
-    //         $image = Input::file($data['img']);
-    //         $name = $image->getClientOriginalName();
-    //         // $size = $image->getClientSize();
-    //         $destinationPath = public_path('users/images');
-    //         $image->move($destinationPath, $name);
-    //          $userImage->img = $name;
-    //         // $userImage->size = $size;
-    //         dd($userImage);
-    //        // $userImage->save;
-    // }
+     {    
+        if(Input::hasfile($data['image'])){
+            //Get file name with extension
+            $fileNameWithExt =  Input::file('image')->getClientOriginalName();
 
-    // $image=$Request->file('img');
-    //     $input['img']=$image->getClientOriginalName();
-    //     $destination=public_path('/users/imagesusers');
-    //     $image->move($destination,  $input['img']);
-        // $companyInformation->company_image=  $input['img'];
+            //Get file name without extension
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            
+            //Get file extension
+            $extension = Input::file('image')->getClientOriginalExtension();
 
-        // if(Input::hasfile($data['img'])){
-        //     $image = Input::file($data['avatar']);
-        //     $input['img']=$image->getClientOriginalName();
-        //     //     $destination=public_path('/users/imagesusers');
-        //     //     $image->move($destination,  $input['img']);
-        //         // $companyInformation->company_image=  $input['img'];
-        // }
+            //Create new file name 
 
+            $fileNameToStore = $fileName.'_'.time().'.'.$extension;   
+            
+            //Store to Database as path
+            $imagePath = Input::file('image')->storeAs('public/storage/users_image', $fileNameToStore);
+        }           
         return User::create([
             'name'=> $data['name'],
             'username' => $data['username'],
@@ -101,7 +92,8 @@ class RegisterController extends Controller
             'city' => $data['city'],
             'gender' => $data['gender'],
             'birthdate' => $data['birthdate'],
-            'img' => $data['img']
+            'img' => $fileNameToStore
         ]);
+       
     }
 }

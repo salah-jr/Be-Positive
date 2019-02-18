@@ -23,6 +23,9 @@ use Illuminate\Support\Facades\Mail;
     return view('userpages.index');
 });
 */
+Route::get('/profilee', function () {
+    return view('userpages.profilee');
+});
 
 
 Route::get('/home','HomeController@index');

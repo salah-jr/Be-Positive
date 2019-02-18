@@ -1,0 +1,79 @@
+.profile-pic{
+  color:#fff;
+  border-right: 1px solid #fff;
+}
+.profile-pic img {margin-top: -12px;}
+.profile-pic:hover{ 
+  border-right: 1px solid #27AE60;
+}
+
+.dropdown-toggle:after{
+  display:none;
+}
+.fa-bell-o{
+  color: #fff;
+  size:24px;
+}
+.profile-menu{
+  top:-30px!important;
+}
+.profile-menu .profile-body-items{
+  color:#000!important;
+}
+.profile-body-items:hover,
+.notification-menu .notification-body .notification-recieved:hover{
+  background-color:#dcffe4!important;
+}
+.notification-menu,.profile-menu{
+  width:300px;
+  color:#000;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.notification-menu .notification-title,
+.profile-menu .profile-title{
+  background-color:#27AE60;
+  color: #fff;
+  font-weight: bolder;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 50px;
+  
+}
+.notification-menu .notification-body,
+.profile-menu .profile-body{
+  background-color: #fff;
+}
+.notification-menu .notification-body .notification-recieved{
+  border-bottom:1px solid #348547;
+  
+}
+
+.notification-menu .notification-body .notification-recieved p{color:#3a3939}
+.notification-menu .notification-body .notification-recieved p span {
+  font-weight: bolder;
+}
+.notification-menu .notification-body .notification-recieved p.notification-time {
+  font-weight: bolder;
+  font-size:13px;
+  margin:2% 0;
+  text-align: end;
+}
+.notification-menu .notification-footer{
+  background-color: #dcffe4;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width:770px){
+  #mobile-nav{left: -308px;width: 308px}
+  .fa-bell-o{margin-left:10px;}
+  p.notification-time{margin-top: -14%!important; }
+  .notification-menu,.profile-menu{box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0); }
+  .profile-menu{top:-77px!important;}
+  .notification-menu{top:-28px!important;}
+}
