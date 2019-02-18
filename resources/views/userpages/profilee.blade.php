@@ -195,6 +195,7 @@
 
 		</div>
 	</div>
+
 	<div class="container">
 		<div class="copyright">
 			&copy; Copyright <strong>B+</strong>. All Rights Reserved

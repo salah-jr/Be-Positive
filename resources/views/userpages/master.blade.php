@@ -39,7 +39,7 @@
 						{{-- <li><a href="{{ route('login') }}">Login</a></li>
 						<li><a href="{{ route('register') }}">Register</a></li> --}}
 						<li class="menu-active"><a href="#hero">Home</a></li>
-						<li><a href="#portfolio">Donors</a></li>
+						<li><a href="#blood-type">Donors</a></li>
 						<li><a href="#charities">Charities</a></li>
 						<li><a href="#team">Team</a></li>
 						<li><a href="#contact">Contact Us</a></li>
@@ -47,7 +47,7 @@
 						<li><a href="" data-toggle="modal" data-target="#login"> Login</a></li>
 						@else
 						<li class="menu-active"><a href="#hero">Home</a></li>
-						<li><a href="#portfolio">Blood</a></li>
+						<li><a href="#blood-type">Blood</a></li>
 						<li><a href="#charities">Charities</a></li>
 						<li><a href="#team">Team</a></li>
 						<li><a href="#contact">Contact Us</a></li>
