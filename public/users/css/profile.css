@@ -1,13 +1,13 @@
 @import 'mainStyle.css' ;
 #header{
-    background-color: #343B40;
+    background-color: var(--mainColor);
   
 }
-.badge{background-color: #27AE60}
+.badge{background-color: var(--notificationsColor)}
 .badge-important{
     margin-left: 25px;
     position: absolute;
-    color: #fff;
+    color: var(--whiteColor);
     font-weight: bolder;
     padding: 2px 4px ;
 }
@@ -30,8 +30,8 @@
   
 .container-profile .blood-Donation-info  div.header {
     height: 200px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--notificationsColor);
+    color: var(--whiteColor);
     padding: 27% 44%;
     font-size: 40px;
     font-weight: bolder;
@@ -50,7 +50,7 @@
       margin: auto;
   }
   div.odd{
-      background-color: #dcffe4;
+      background-color: var(--zebraColor);
   }
   .valueOfInfo{
       text-align: start;

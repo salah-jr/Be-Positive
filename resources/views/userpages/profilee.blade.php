@@ -11,10 +11,11 @@
 	<!-- Favicons -->
 	<link href="{{asset('users/img/favicon.png')}}" rel="icon">
 	<link href="{{asset('users/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-
+    
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
-		  rel="stylesheet">
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
 		  integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 	<!-- Bootstrap CSS File -->
@@ -42,7 +43,7 @@
                 <ul class="nav-menu">
                     <li>                                <!-- start  dropdown profile image -->
                         <div class='profile-pic d-flex justify-content-start mr-3' data-toggle="dropdown">
-                            <img src="{{asset('users/img/Charities/0120.png')}}" class="img-responsive rounded-circle account-img mr-1" alt="user" width="50px" height="50px">
+                            <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img mr-1" alt="user" width="50px" height="50px">
                             <p class="profile-userName pr-2"> Ahmed</p>
                         </div>
                         <div class="dropdown">
@@ -78,7 +79,7 @@
                             </div>
                         </div>
                     </li>                            <!-- End  dropdown profile image -->
-                    <li><a href="#portfolio">Home</a></li>
+                    <li><a href="#blood-type">Home</a></li>
                     <li>                          <!-- start  dropdown Notifications Bell -->
                         <span class="badge badge-important dropdown-toggle" data-toggle="dropdown">2</span>
                         <i class='fa fa-bell-o fa-lg dropdown-toggle' data-toggle="dropdown"></i>
@@ -91,38 +92,38 @@
                                 <div class="notification-body">
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('users/img/Charities/0120.png')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
-                                            <div class="d-flex flex-column">
+                                            <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <a href="" class="d-flex flex-column">
                                                 <p class="p-2">
                                                     <span class="pl-1">Amira</span> send notification to you</p>
                                                     <p class="notification-time">20:8 pm</p>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('users/img/Charities/0120.png')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
-                                            <div class="d-flex flex-column">
+                                            <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <a  href="" class="d-flex flex-column">
                                                 <p class="p-2">
                                                     <span class="pl-1">Amira</span> send notification to you</p>
                                                     <p class="notification-time">20:8 pm</p>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('users/img/Charities/0120.png')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
-                                            <div class="d-flex flex-column">
+                                            <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <a href="" class="d-flex flex-column">
                                                 <p class="p-2">
                                                     <span class="pl-1">Amira</span> send notification to you</p>
                                                     <p class="notification-time">20:8 pm</p>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="notification-footer">
+                                <a class="notification-footer">
                                     <div>See All Notifications</div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </li>                                     <!--End  dropdown Notifications Bell -->
@@ -135,7 +136,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="profile-image">
-                    <img src="{{asset('users/img/Charities/0120.png')}}" class="img-responsive rounded account-img" alt="user" width="200px" height="200px">
+                    <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded account-img" alt="user" width="200px" height="200px">
                 </div><br>
                 <div>
                     <p class="text-center mt-5">Blood Donation</p>

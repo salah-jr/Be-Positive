@@ -1,40 +1,41 @@
+@import 'variablesColor.css' ;
 .profile-pic{
-  color:#fff;
-  border-right: 1px solid #fff;
+  color:var(--whiteColor);
+  border-right: 1px solid var(--whiteColor);
 }
 .profile-pic img {margin-top: -12px;}
 .profile-pic:hover{ 
-  border-right: 1px solid #27AE60;
+  border-right: 1px solid var(--notificationsColor)
 }
 
 .dropdown-toggle:after{
   display:none;
 }
 .fa-bell-o{
-  color: #fff;
+  color: var(--whiteColor);
   size:24px;
 }
 .profile-menu{
   top:-30px!important;
 }
 .profile-menu .profile-body-items{
-  color:#000!important;
+  color:var(--blackcolor)!important;
 }
 .profile-body-items:hover,
 .notification-menu .notification-body .notification-recieved:hover{
-  background-color:#dcffe4!important;
+  background-color:var(--zebraColor)!important;
 }
 .notification-menu,.profile-menu{
   width:300px;
-  color:#000;
+  color:var(--blackcolor);
   border: 0px;
   background-color: rgba(0, 0, 0, 0);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .notification-menu .notification-title,
 .profile-menu .profile-title{
-  background-color:#27AE60;
-  color: #fff;
+  background-color:var(--notificationsColor);
+  color: var(--whiteColor);
   font-weight: bolder;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -43,14 +44,13 @@
 }
 .notification-menu .notification-body,
 .profile-menu .profile-body{
-  background-color: #fff;
+  background-color: var(--whiteColor);
 }
 .notification-menu .notification-body .notification-recieved{
-  border-bottom:1px solid #348547;
-  
+  border-bottom:1px solid rgba(0, 0, 0, 0.19); 
 }
-
-.notification-menu .notification-body .notification-recieved p{color:#3a3939}
+.notification-menu .notification-body .notification-recieved a {padding: 0px;}
+.notification-menu .notification-body .notification-recieved p{color:var(--colorSubText)}
 .notification-menu .notification-body .notification-recieved p span {
   font-weight: bolder;
 }
@@ -61,7 +61,7 @@
   text-align: end;
 }
 .notification-menu .notification-footer{
-  background-color: #dcffe4;
+  background-color: var(--zebraColor);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 50px;
