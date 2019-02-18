@@ -32,17 +32,15 @@
 	<link href="{{asset('users/css/modal.css')}}" rel="stylesheet">
 	<link href="{{asset('users/css/profile.css')}}" rel="stylesheet">
 	<link href="{{asset('users/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
-    <!--==========================
-  Header
-  ============================-->
+                    <!------------------------------------- start header profile page ------------------------------>
     <header id="header">
         <div class="container">
             <div id="logo" class="pull-left">
                 <h1><a href="#hero">B+</a></h1>
             </div>
-            <nav id="nav-menu-container">
+            <nav id="nav-menu-container">                  <!------- start nav -------->
                 <ul class="nav-menu">
-                    <li>
+                    <li>                                <!-- start  dropdown profile image -->
                         <div class='profile-pic d-flex justify-content-start mr-3' data-toggle="dropdown">
                             <img src="{{asset('users/img/Charities/0120.png')}}" class="img-responsive rounded-circle account-img mr-1" alt="user" width="50px" height="50px">
                             <p class="profile-userName pr-2"> Ahmed</p>
@@ -79,16 +77,16 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li>                            <!-- End  dropdown profile image -->
                     <li><a href="#portfolio">Home</a></li>
-                    <li>
+                    <li>                          <!-- start  dropdown Notifications Bell -->
                         <span class="badge badge-important dropdown-toggle" data-toggle="dropdown">2</span>
                         <i class='fa fa-bell-o fa-lg dropdown-toggle' data-toggle="dropdown"></i>
                         <div class="dropdown">
                             <div class="dropdown-menu notification-menu">
                                 <div class="notification-title d-flex justify-content-between p-2">
-                                        <p>Notifications</p>
-                                        <i class="material-icons">settings</i>
+                                    <p>Notifications</p>
+                                    <i class="material-icons">settings</i>
                                 </div>
                                 <div class="notification-body">
                                     <div class="notification-recieved">
@@ -127,15 +125,13 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    
+                    </li>                                     <!--End  dropdown Notifications Bell -->
                 </ul>
-
-            </nav>
+            </nav>                                                 <!------- End nav -------->
         </div>
-    </header>
+    </header>              <!------------------------------------- End header profile page ------------------------------>
     <br><br><br><br>
-    <div class="container container-profile">
+    <div class="container container-profile">  <!------------------------------------- Start  profile container ------------------------------>
         <div class="row">
             <div class="col-sm-3">
                 <div class="profile-image">
@@ -187,10 +183,7 @@
                 </div>
             </div>
         </div>
-
-
-        
-    </div>
+    </div> <!------------------------------------- End profile container ------------------------------>
     <br>
 
 <!--==========================
@@ -202,7 +195,6 @@
 
 		</div>
 	</div>
-
 	<div class="container">
 		<div class="copyright">
 			&copy; Copyright <strong>B+</strong>. All Rights Reserved

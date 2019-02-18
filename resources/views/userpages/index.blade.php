@@ -389,7 +389,7 @@
 
         
 
-
+      <div class="col-lg-5 col-md-6">
         <form method="POST" action="/contact" role="form" class="contactForm">
           {{ csrf_field() }}
           <div class="form-group">
