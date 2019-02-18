@@ -21,12 +21,12 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //  'name' => 'required',
-        //  'email' => 'required|email',
-        //  'subject' => 'required',
-        //  'message' => 'required'
-        //  ]);
+        $this->validate($request, [
+         'name' => 'required',
+         'email' => 'required|email',
+         'subject' => 'required',
+         'message' => 'required'
+         ]);
 
         $contactmessage= new ContactUs;
         $contactmessage->name = $request->name;
@@ -34,16 +34,17 @@ class ContactController extends Controller
         $contactmessage->subject = $request->subject;
         $contactmessage->message = $request->message;
         $contactmessage->save();
-
+        
         Mail::send('emails.welcome',
         array(
             'name' => $request->get('name'),
             'email' => $request->get('email'),
+            'subject' => $request->get('subject'),
             'user_message'=> $request->get('message')
         ),function($message)
        {
         $message->from('momenadel3030@gmail.com','Admin momen');
-        $message->to('momen.adel.abdelhakeem@gmail.com', 'Admin 2')->subject('Cloudways Feedback');
+        $message->to('momen.adel.abdelhakeem@gmail.com', 'Admin 2')->subject('Important message');
        });
        
        return back();
