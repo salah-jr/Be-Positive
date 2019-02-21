@@ -7,24 +7,24 @@
 		<meta content="" name="keywords">
 		<meta content="" name="description">
 		<!-- Favicons -->
-		<link href="{{asset('users/img/favicon.png')}}" rel="icon">
-		<link href="{{asset('users/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+		<link href="{{asset('sitecss/img/favicon.png')}}" rel="icon">
+		<link href="{{asset('sitecss/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
 				rel="stylesheet">
 		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
 				integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 		<!-- Bootstrap CSS File -->
-		<link href="{{asset('users/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+		<link href="{{asset('sitecss/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 		<!-- Libraries CSS Files -->
-		<link href="{{asset('users/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-		<link href="{{asset('users/lib/animate/animate.min.css')}}" rel="stylesheet">
-		<link href="{{asset('users/lib/slick/slick.css')}}" rel="stylesheet"><!--slick library for Charities slider -->
+		<link href="{{asset('sitecss/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+		<link href="{{asset('sitecss/lib/animate/animate.min.css')}}" rel="stylesheet">
+		<link href="{{asset('sitecss/lib/slick/slick.css')}}" rel="stylesheet"><!--slick library for Charities slider -->
 		<!-- Main Stylesheet File -->
-		<link href="{{asset('users/css/mainStyle.css')}}" rel="stylesheet">
-		<link href="{{asset('users/css/modal.css')}}" rel="stylesheet">
-		<link href="{{asset('users/css/profile.css.css')}}" rel="stylesheet">
-		<link href="{{asset('users/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
+		<link href="{{asset('sitecss/css/mainStyle.css')}}" rel="stylesheet">
+		<link href="{{asset('sitecss/css/modal.css')}}" rel="stylesheet">
+		<link href="{{asset('sitecss/css/profile.css.css')}}" rel="stylesheet">
+		<link href="{{asset('sitecss/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
 	</head>
 	<body>        
 											<!------------------------------------- start header------------------------------>
@@ -53,10 +53,12 @@
 						<li><a href="#contact">Contact Us</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								{{ Auth::user()->email}} 
 								{{ Auth::user()->name}} 
 							</a>
 							<ul>
+								<li>
+									<a href="/profile">View profile</a>
+								</li>
 								<li>
 									<a href="{{ route('logout') }}"
 									onclick="event.preventDefault();
@@ -67,6 +69,7 @@
 										{{ csrf_field() }}
 									</form>
 								</li>
+
 							</ul>
 						</li> 
 						@endguest
@@ -136,21 +139,21 @@
 		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 											<!--------------------------------- End Start Footer   --------------------------->  
 											<!---------------------------      JavaScript Libraries   ------------------------>
-		<script src="{{asset('users/lib/jquery/jquery.min.js')}}"></script>
-		<script src="{{asset('users/lib/jquery/jquery-migrate.min.js')}}"></script>
-		<script src="{{asset('users/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-		<script src="{{asset('users/lib/easing/easing.min.js')}}"></script>
-		<script src="{{asset('users/lib/wow/wow.min.js')}}"></script>
-		<script src="{{asset('users/lib/waypoints/waypoints.min.js')}}"></script>
-		<script src="{{asset('users/lib/counterup/counterup.min.js')}}"></script>
-		<script src="{{asset('users/lib/superfish/hoverIntent.js')}}"></script>
-		<script src="{{asset('users/lib/superfish/superfish.min.js')}}"></script>
+		<script src="{{asset('sitecss/lib/jquery/jquery.min.js')}}"></script>
+		<script src="{{asset('sitecss/lib/jquery/jquery-migrate.min.js')}}"></script>
+		<script src="{{asset('sitecss/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+		<script src="{{asset('sitecss/lib/easing/easing.min.js')}}"></script>
+		<script src="{{asset('sitecss/lib/wow/wow.min.js')}}"></script>
+		<script src="{{asset('sitecss/lib/waypoints/waypoints.min.js')}}"></script>
+		<script src="{{asset('sitecss/lib/counterup/counterup.min.js')}}"></script>
+		<script src="{{asset('sitecss/lib/superfish/hoverIntent.js')}}"></script>
+		<script src="{{asset('sitecss/lib/superfish/superfish.min.js')}}"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-		<script src="{{asset('users/lib/slick/slick.js')}}"></script><!-- slick library for Charities slider -->
-		<script src="{{asset('users/contactform/contactform.js')}}"></script><!-- Contact Form JavaScript File -->
+		<script src="{{asset('sitecss/lib/slick/slick.js')}}"></script><!-- slick library for Charities slider -->
+		<script src="{{asset('sitecss/contactform/contactform.js')}}"></script><!-- Contact Form JavaScript File -->
 		<!-- main script -->
-		<script src="{{asset('users/js/main.js')}}"></script>
-		<script src="{{asset('users/js/modal.js')}}"></script>
-		<script src="{{asset('users/js/dropdownNotificationAndProfile.js')}}"></script>
+		<script src="{{asset('sitecss/js/main.js')}}"></script>
+		<script src="{{asset('sitecss/js/modal.js')}}"></script>
+		<script src="{{asset('sitecss/js/dropdownNotificationAndProfile.js')}}"></script>
 	</body>
 </html>

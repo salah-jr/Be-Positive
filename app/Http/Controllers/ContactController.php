@@ -10,7 +10,6 @@ use App\ContactUS;
 
 class ContactController extends Controller
 {
-   
 
 
     public function contactUS()
@@ -47,9 +46,9 @@ class ContactController extends Controller
         $message->to('mohamed.salah21500@gmail.com', 'Admin 2')->subject('Important message');
        });
        
-       return back();
-        // return back()->with('success', 'Thanks for contacting us!');
-    }
+       return redirect('/')->with('success', 'Message Sent');
+       
+    }   
 
 
 

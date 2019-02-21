@@ -23,14 +23,13 @@ use Illuminate\Support\Facades\Mail;
     return view('userpages.index');
 });
 */
-Route::get('/profilee', function () {
-    return view('userpages.profilee');
+Route::get('/profile', function () {
+    return view('userpages.profile');
 });
 
 
 Route::get('/home','HomeController@index');
 Route::get('/','HomeController@index');
-Route::get('profile/{id}','UserController@show');
 Route::post('/insert','UserController@store');
 Auth::routes();
 
@@ -85,3 +84,8 @@ Route::post('/contact','ContactController@store');
 
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

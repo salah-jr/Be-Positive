@@ -13,7 +13,7 @@
   </div><!--End change scroll bar of screen ---> 
   <div class="bg_video"><!-- start video -->
     <video autoplay muted loop>
-      <source src="{{asset('users/videos/bg_video.mp4')}}" type="video/mp4">
+      <source src="{{asset('sitecss/videos/bg_video.mp4')}}" type="video/mp4">
     </video><!-- End video -->
   </div>
 </section><!------------------------------************** End  video slider ******************-------------------------------->
@@ -48,7 +48,7 @@
         @if ($user->blood_type=="O+")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-O-Pos">
           <a href="">
-            <img src="storage/storage/users_images/{{$user->image}}" alt="">
+            <img src="{{ asset("storage/users/$user->img") }}" alt="">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -61,7 +61,7 @@
         @if ($user->blood_type=="O-")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-O-Neg">
           <a href="">
-            <img src="storage/storage/users_images/{{$user->image}}" alt="">
+            <img src="{{ asset("storage/users/$user->img") }}" alt="">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -74,7 +74,7 @@
         @if ($user->blood_type=="A+")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-A-Pos">
           <a href="">
-            <img src="storage/storage/users_images/{{$user->image}}" alt="">
+            <img src="{{ asset("storage/users/$user->img") }}" alt="">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -87,7 +87,7 @@
         @if ($user->blood_type=="A-")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-A-Neg">
           <a href="">
-            <img src="storage/storage/users_images/{{$user->image}}" alt="">
+            <img src="{{ asset("storage/users/$user->img") }}" style="width: 100%;" alt="">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -100,7 +100,7 @@
         @if ($user->blood_type=="B+")  
         <div class="col-lg-3 col-md-6 blood-type-item filter-B-Pos">
           <a href="">
-            <img src="users/usersimgages/{{$user->img}}" alt="{{$user->blood_type}}">
+            <img src="{{ asset("storage/users/$user->img") }}" alt="{{$user->blood_type}}">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -113,7 +113,7 @@
           @if ($user->blood_type=="B-")  
         <div class="col-lg-3 col-md-6 blood-type-item filter-B-Neg">
           <a href="">
-            <img src="storage/storage/users_images/{{$user->image}}" alt="">
+            <img src="{{ asset("storage/users/$user->img") }}" alt="">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -126,7 +126,7 @@
         @if ($user->blood_type=="AB+")  
         <div class="col-lg-3 col-md-6 blood-type-item filter-AB-Pos">
           <a href="">
-            <img src="storage/storage/users_images/{{$user->image}}" alt="">
+            <img src="{{ asset("storage/users/$user->img") }}" alt="">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -139,7 +139,7 @@
         @if ($user->blood_type=="AB-")  
         <div class="col-lg-3 col-md-6 blood-type-item filter-AB-Neg">
           <a href="">
-            <img src="storage/storage/users_images/{{$user->image}}" alt="">
+            <img src="{{ asset("storage/users/$user->img") }}" alt="">
             <div class="details">
               <h4> Name : {{$user->name}}</h4>
               <span> Blood Type: {{$user->blood_type}}</span>
@@ -184,13 +184,13 @@
     </div>
     <div class="container wow fadeIn">
       <div class="customer-logos slider">
-        <div class="slide"><img src="{{asset('users/img/Charities/0120.png')}}"></div>
-        <div class="slide"><img src="{{asset('users/img/Charities/referans-5.png')}}"></div>
-        <div class="slide"><img src="{{asset('users/img/Charities/referans-4.png')}}"></div>
-        <div class="slide"><img src="{{asset('users/img/Charities/referans-3.png')}}"></div>
-        <div class="slide"><img src="{{asset('users/img/Charities/referans-2.png')}}"></div>
-        <div class="slide"><img src="{{asset('users/img/Charities/0120.png')}}"></div>
-        <div class="slide"><img src="{{asset('users/img/Charities/referans-5.png')}}"></div>
+        <div class="slide"><img src="{{asset('sitecss/img/Charities/0120.png')}}"></div>
+        <div class="slide"><img src="{{asset('sitecss/img/Charities/referans-5.png')}}"></div>
+        <div class="slide"><img src="{{asset('sitecss/img/Charities/referans-4.png')}}"></div>
+        <div class="slide"><img src="{{asset('sitecss/img/Charities/referans-3.png')}}"></div>
+        <div class="slide"><img src="{{asset('sitecss/img/Charities/referans-2.png')}}"></div>
+        <div class="slide"><img src="{{asset('sitecss/img/Charities/0120.png')}}"></div>
+        <div class="slide"><img src="{{asset('sitecss/img/Charities/referans-5.png')}}"></div>
       </div>
     </div>
   </section><!------------------********* End charities section ***********-------------------------->
@@ -204,7 +204,7 @@
         <div class="col-lg-3 col-md-6"><!--member one in the team --->
           <div class="member">
             <div class="pic">
-              <img src="{{asset('users/img/avatar.png')}}" alt="">
+              <img src="{{asset('sitecss/img/avatar.png')}}" alt="">
             </div>
             <h4>Ahmed Alaa</h4>
             <div class="border"></div>
@@ -218,7 +218,7 @@
         </div>
         <div class="col-lg-3 col-md-6"><!--member two in the team --->
           <div class="member">
-            <div class="pic"><img src="{{asset('users/img/avatar.png')}}" alt=""></div>
+            <div class="pic"><img src="{{asset('sitecss/img/avatar.png')}}" alt=""></div>
             <h4>Mohammed Salah</h4>
             <div class="border"></div>
             <span>Fullstack Web Developer</span>
@@ -231,7 +231,7 @@
         </div>
         <div class="col-lg-3 col-md-6"><!--member three in the team --->
           <div class="member">
-            <div class="pic"><img src="{{asset('users/img/avatar.png')}}" class="img-fluid" alt=""></div>
+            <div class="pic"><img src="{{asset('sitecss/img/avatar.png')}}" class="img-fluid" alt=""></div>
             <h4>Momen Adel</h4>
             <div class="border"></div>
             <span>Back-end Developer</span>
@@ -244,7 +244,7 @@
         </div>
         <div class="col-lg-3 col-md-6"><!--member Four in the team --->
           <div class="member">
-            <div class="pic"><img src="{{asset('users/img/avatar.png')}}" alt=""></div>
+            <div class="pic"><img src="{{asset('sitecss/img/avatar.png')}}" alt=""></div>
             <h4>Mohammed Essa</h4>
             <div class="border"></div>
             <span>Front-end developer</span>
@@ -270,6 +270,7 @@
       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5019.143013720076!2d31.171614250924147!3d27.185534716103376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14450bfcc66b0f27%3A0x5c93b0105928bd21!2sInformation+Technology+Institute+-+ITI!5e0!3m2!1sen!2seg!4v1550179544936"
       width="100%" height="380" frameborder="0" style="border:0" allowfullscreen>
     </iframe> <!-------  end Google Map --------->
+   
     <div class="container wow fadeInUp mt-5">
       <div class="row justify-content-center">
         <div class="col-lg-3 col-md-4"><!---- Start contact us info ----->
@@ -294,8 +295,12 @@
             <a href="#" class="github"><i class="fa fa-github"></i></a>
             <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
           </div>
+         
         </div><!---- End contact us info ----->
+        <br>
+        
         <div class="col-lg-5 col-md-6"><!---- start contact us form ---->
+          @include('inc.messages')
           <form method="POST" action="/contact" role="form" class="contactForm">
             {{ csrf_field() }}
             <div class="form-group">
@@ -316,6 +321,7 @@
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
+          
         </div><!---- End contact us form ----> 
   </section><!-------------------------*********** start Contact us section ***********--------------------------->
 </main> <!-----------------------------------*********** End Main Of All Sections **********------------------------------------->
