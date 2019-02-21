@@ -19,14 +19,10 @@ use Illuminate\Support\Facades\Mail;
 // Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')
 //         ->where('social','twitter|facebook|linkedin|google|github');
 
-/*Route::get('/', function () {
-    return view('userpages.index');
-});
-*/
+
 Route::get('/profilee', function () {
     return view('userpages.profilee');
 });
-
 
 Route::get('/home','HomeController@index');
 Route::get('/','HomeController@index');
@@ -35,51 +31,14 @@ Route::post('/insert','UserController@store');
 Auth::routes();
 
 
-
 Route::group(['middleware'=>['admin','auth']],function(){
     Route::get('dashboard', 'admin\AdminController@index');
-    Route::get('home', 'MassageController@index');
 });
 
 Route::group(['middleware' => ['auth', 'charity']], function()
 {
     Route::get('charity', 'charity\CharityController@index');
 });
-
-
-Route::get('sendemail', function () {
-
-    $data = array(
-        'name' => 'mo',
-    );
-
-    Mail::send('emails.welcome', $data, function ($message) {
-
-        // $message->from('momenadel3030@gmail.com', 'memo');
-
-        // $message->to('momen.adel.abdelhakeem@gmail.com')->subject(' test email');
-
-
-       $message->from('momen.adel.abdelhakeem@gmail.com', 'memo');
-
-        $message->to('momenadel3030@gmail.com')->subject(' test email');
-
-       
-    //     $email='momen.adel.abdelhakeem@gmail.com';
-    //     $subject='lllllll';
-    //         $message->from($email, 'name');
-    //         $message->to('momenadel3030@gmail.com')->subject($subject);
-    
-
-    });
-
-    return "Your email has been sent successfully";
-
-});
-
-
-
-// Route::get('contactus', 'ContactController@contactUS');
 
 Route::post('/contact','ContactController@store');
 

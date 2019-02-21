@@ -37,6 +37,13 @@ require __DIR__.'/../vendor/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
+
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers : Content-Type, X-Auth-Token, Authorization, X-Requested-With');
+header('Content-Type:x-www-form-urlencoded');
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application
