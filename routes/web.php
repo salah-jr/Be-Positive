@@ -30,6 +30,9 @@ Route::get('/profilee', function () {
 */
 Route::get('/profile', function () {
     return view('userpages.profile');
+<<<<<<< HEAD
+>>>>>>> ca50905e876601731f0991dfd700750f143517e7
+=======
 >>>>>>> ca50905e876601731f0991dfd700750f143517e7
 });
 
@@ -57,3 +60,20 @@ Route::post('/contact','ContactController@store');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+<<<<<<< HEAD
+=======
+
+
+
+// Route::get('contactus', 'ContactController@contactUS');
+
+Route::post('/contact','ContactController@store');
+
+
+
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+>>>>>>> ca50905e876601731f0991dfd700750f143517e7
