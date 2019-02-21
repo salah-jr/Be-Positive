@@ -19,14 +19,22 @@ use Illuminate\Support\Facades\Mail;
 // Route::get('/login/{social}/callback','Auth\LoginController@handleProviderCallback')
 //         ->where('social','twitter|facebook|linkedin|google|github');
 
+<<<<<<< HEAD
 
 Route::get('/profilee', function () {
     return view('userpages.profilee');
+=======
+/*Route::get('/', function () {
+    return view('userpages.index');
+});
+*/
+Route::get('/profile', function () {
+    return view('userpages.profile');
+>>>>>>> ca50905e876601731f0991dfd700750f143517e7
 });
 
 Route::get('/home','HomeController@index');
 Route::get('/','HomeController@index');
-Route::get('profile/{id}','UserController@show');
 Route::post('/insert','UserController@store');
 Auth::routes();
 
@@ -44,3 +52,8 @@ Route::post('/contact','ContactController@store');
 
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

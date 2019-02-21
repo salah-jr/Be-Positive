@@ -9,8 +9,8 @@
 	<meta content="" name="description">
 
 	<!-- Favicons -->
-	<link href="{{asset('users/img/favicon.png')}}" rel="icon">
-	<link href="{{asset('users/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+	<link href="{{asset('sitecss/img/favicon.png')}}" rel="icon">
+	<link href="{{asset('sitecss/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
     
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
@@ -19,20 +19,20 @@
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
 		  integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 	<!-- Bootstrap CSS File -->
-	<link href="{{asset('users/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('sitecss/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
 	<!-- Libraries CSS Files -->
-	<link href="{{asset('users/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-	<link href="{{asset('users/lib/animate/animate.min.css')}}" rel="stylesheet">
+	<link href="{{asset('sitecss/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+	<link href="{{asset('sitecss/lib/animate/animate.min.css')}}" rel="stylesheet">
 
 
-	<link href="{{asset('users/lib/slick/slick.css')}}" rel="stylesheet">
+	<link href="{{asset('sitecss/lib/slick/slick.css')}}" rel="stylesheet">
 
 	<!-- Main Stylesheet File -->
-	<link href="{{asset('users/css/mainStyle.css')}}" rel="stylesheet">
-	<link href="{{asset('users/css/modal.css')}}" rel="stylesheet">
-	<link href="{{asset('users/css/profile.css')}}" rel="stylesheet">
-	<link href="{{asset('users/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
+	<link href="{{asset('sitecss/css/mainStyle.css')}}" rel="stylesheet">
+	<link href="{{asset('sitecss/css/modal.css')}}" rel="stylesheet">
+	<link href="{{asset('sitecss/css/profile.css')}}" rel="stylesheet">
+	<link href="{{asset('sitecss/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
                     <!------------------------------------- start header profile page ------------------------------>
     <header id="header">
         <div class="container">
@@ -43,7 +43,7 @@
                 <ul class="nav-menu">
                     <li>                                <!-- start  dropdown profile image -->
                         <div class='profile-pic d-flex justify-content-start mr-3' data-toggle="dropdown">
-                            <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img mr-1" alt="user" width="50px" height="50px">
+                            <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img mr-1" alt="user" width="50px" height="50px">
                             <p class="profile-userName pr-2"> Ahmed</p>
                         </div>
                         <div class="dropdown">
@@ -92,7 +92,7 @@
                                 <div class="notification-body">
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
                                             <a href="" class="d-flex flex-column">
                                                 <p class="p-2">
                                                     <span class="pl-1">Amira</span> send notification to you</p>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
                                             <a  href="" class="d-flex flex-column">
                                                 <p class="p-2">
                                                     <span class="pl-1">Amira</span> send notification to you</p>
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
                                             <a href="" class="d-flex flex-column">
                                                 <p class="p-2">
                                                     <span class="pl-1">Amira</span> send notification to you</p>
@@ -136,7 +136,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="profile-image">
-                    <img src="{{asset('users/img/team-2.jpg')}}" class="img-responsive rounded account-img" alt="user" width="200px" height="200px">
+                    <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded account-img" alt="user" width="200px" height="200px">
                 </div><br>
                 <div>
                     <p class="text-center mt-5">Blood Donation</p>
@@ -211,25 +211,25 @@
 
 
 <!-- JavaScript Libraries -->
-<script src="{{asset('users/lib/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('users/lib/jquery/jquery-migrate.min.js')}}"></script>
-<script src="{{asset('users/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('users/lib/easing/easing.min.js')}}"></script>
-<script src="{{asset('users/lib/wow/wow.min.js')}}"></script>
-<script src="{{asset('users/lib/waypoints/waypoints.min.js')}}"></script>
-<script src="{{asset('users/lib/counterup/counterup.min.js')}}"></script>
-<script src="{{asset('users/lib/superfish/hoverIntent.js')}}"></script>
-<script src="{{asset('users/lib/superfish/superfish.min.js')}}"></script>
+<script src="{{asset('sitecss/lib/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('sitecss/lib/jquery/jquery-migrate.min.js')}}"></script>
+<script src="{{asset('sitecss/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('sitecss/lib/easing/easing.min.js')}}"></script>
+<script src="{{asset('sitecss/lib/wow/wow.min.js')}}"></script>
+<script src="{{asset('sitecss/lib/waypoints/waypoints.min.js')}}"></script>
+<script src="{{asset('sitecss/lib/counterup/counterup.min.js')}}"></script>
+<script src="{{asset('sitecss/lib/superfish/hoverIntent.js')}}"></script>
+<script src="{{asset('sitecss/lib/superfish/superfish.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-<script src="{{asset('users/lib/slick/slick.js')}}"></script>
+<script src="{{asset('sitecss/lib/slick/slick.js')}}"></script>
 
 <!-- Contact Form JavaScript File -->
-<script src="{{asset('users/contactform/contactform.js')}}"></script>
+<script src="{{asset('sitecss/contactform/contactform.js')}}"></script>
 
 
-<script src="{{asset('users/js/main.js')}}"></script>
-<script src="{{asset('users/js/modal.js')}}"></script>
-<script src="{{asset('users/js/dropdownNotificationAndProfile.js')}}"></script>
+<script src="{{asset('sitecss/js/main.js')}}"></script>
+<script src="{{asset('sitecss/js/modal.js')}}"></script>
+<script src="{{asset('sitecss/js/dropdownNotificationAndProfile.js')}}"></script>
 </body>
 
 </html>

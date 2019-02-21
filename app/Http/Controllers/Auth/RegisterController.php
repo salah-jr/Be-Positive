@@ -7,7 +7,7 @@ use Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Facades\Input;
 class RegisterController extends Controller
 {
     /*
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,11 +49,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'username' => 'required|string|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
 
@@ -64,24 +62,24 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-     {    
-        if(Input::hasfile($data['image'])){
-            //Get file name with extension
-            $fileNameWithExt =  Input::file('image')->getClientOriginalName();
+     {   
+      
+        //Get file name with extension
+        $fileNameWithExt =  Input::file('image')->getClientOriginalName();
 
-            //Get file name without extension
-            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            
-            //Get file extension
-            $extension = Input::file('image')->getClientOriginalExtension();
+        //Get file name without extension
+        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+        
+        //Get file extension
+        $extension = Input::file('image')->getClientOriginalExtension();
 
-            //Create new file name 
+        //Create new file name 
 
-            $fileNameToStore = $fileName.'_'.time().'.'.$extension;   
-            
-            //Store to Database as path
-            $imagePath = Input::file('image')->storeAs('public/storage/users_image', $fileNameToStore);
-        }           
+        $fileNameToStore = $fileName.'_'.time().'.'.$extension;   
+        
+        //Store to public path
+        $imagePath = Input::file('image')->move(base_path().'/public/storage/users/', $fileNameToStore);
+        
         return User::create([
             'name'=> $data['name'],
             'username' => $data['username'],
@@ -92,8 +90,9 @@ class RegisterController extends Controller
             'city' => $data['city'],
             'gender' => $data['gender'],
             'birthdate' => $data['birthdate'],
-            'img' => $fileNameToStore
+            'img' =>  $fileNameToStore
         ]);
+    
        
     }
 }
