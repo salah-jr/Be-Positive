@@ -127,3 +127,8 @@ $(document).on("mousemove",function(e) {
   // custom code
 
 });
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);

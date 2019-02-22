@@ -47,108 +47,163 @@
         @foreach ($users as $user)
         @if ($user->blood_type=="O+")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-O-Pos">
-          <a href="">
-            <img src="{{ asset("storage/users/$user->img") }}" alt="">
-            <div class="details">
-              <h4> Name : {{$user->name}}</h4>
-              <span> Blood Type: {{$user->blood_type}}</span>
-            </div>
-          </a>
-        </div>
+            <figure class="snip0016">
+              <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+              <figcaption>
+                <h4><b>{{$user->name}}</b></h4>
+                <p>
+                  From: {{$user->city}}
+                  <br>
+                  Blood Type: {{$user->blood_type}}
+                </p>
+                <br>
+                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+              </figcaption>	
+            </figure>
+          </div>
         @endif
         @endforeach
         @foreach ($users as $user)
         @if ($user->blood_type=="O-")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-O-Neg">
-          <a href="">
-            <img src="{{ asset("storage/users/$user->img") }}" alt="">
-            <div class="details">
-              <h4> Name : {{$user->name}}</h4>
-              <span> Blood Type: {{$user->blood_type}}</span>
-            </div>
-          </a>
-        </div>
+            <figure class="snip0016">
+              <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+              <figcaption>
+                <h4><b>{{$user->name}}</b></h4>
+                <p>
+                  From: {{$user->city}}
+                  <br>
+                  Blood Type: {{$user->blood_type}}
+                </p>
+                <br>
+                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+              </figcaption>	
+            </figure>
+          </div>
         @endif
         @endforeach
+        
         @foreach ($users as $user)
         @if ($user->blood_type=="A+")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-A-Pos">
-          <a href="">
-            <img src="{{ asset("storage/users/$user->img") }}" alt="">
-            <div class="details">
-              <h4> Name : {{$user->name}}</h4>
-              <span> Blood Type: {{$user->blood_type}}</span>
-            </div>
-          </a>
-            </div>
+            <figure class="snip0016">
+              <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+              <figcaption>
+                <h4><b>{{$user->name}}</b></h4>
+                <p>
+                  From: {{$user->city}}
+                  <br>
+                  Blood Type: {{$user->blood_type}}
+                </p>
+                <br>
+                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+              </figcaption>	
+            </figure>
+          </div>
         @endif
         @endforeach
+
         @foreach ($users as $user)
         @if ($user->blood_type=="A-")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-A-Neg">
-          <a href="">
-            <img src="{{ asset("storage/users/$user->img") }}" style="width: 100%;" alt="">
-            <div class="details">
-              <h4> Name : {{$user->name}}</h4>
-              <span> Blood Type: {{$user->blood_type}}</span>
-            </div>
-          </a>
-        </div>
+            <figure class="snip0016">
+              <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+              <figcaption>
+                <h4><b>{{$user->name}}</b></h4>
+                <p>
+                  From: {{$user->city}}
+                  <br>
+                  Blood Type: {{$user->blood_type}}
+                </p>
+                <br>
+                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+              </figcaption>	
+            </figure>
+          </div>
         @endif
         @endforeach
+
         @foreach ($users as $user)
         @if ($user->blood_type=="B+")  
-        <div class="col-lg-3 col-md-6 blood-type-item filter-B-Pos">
-          <a href="">
-            <img src="{{ asset("storage/users/$user->img") }}" alt="{{$user->blood_type}}">
-            <div class="details">
-              <h4> Name : {{$user->name}}</h4>
-              <span> Blood Type: {{$user->blood_type}}</span>
-            </div>
-          </a>
-        </div>
+        <div class="col-lg-4 col-md-6 blood-type-item filter-B-Pos">
+            <figure class="snip0016">
+              <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+              <figcaption>
+                <h4><b>{{$user->name}}</b></h4>
+                <p>
+                  From: {{$user->city}}
+                  <br>
+                  Blood Type: {{$user->blood_type}}
+                </p>
+                <br>
+                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+              </figcaption>	
+            </figure>
+          </div>
         @endif
         @endforeach
+
         @foreach ($users as $user)
           @if ($user->blood_type=="B-")  
-        <div class="col-lg-3 col-md-6 blood-type-item filter-B-Neg">
-          <a href="">
-            <img src="{{ asset("storage/users/$user->img") }}" alt="">
-            <div class="details">
-              <h4> Name : {{$user->name}}</h4>
-              <span> Blood Type: {{$user->blood_type}}</span>
+          <div class="col-lg-4 col-md-6 blood-type-item filter-B-Neg">
+              <figure class="snip0016">
+                <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+                <figcaption>
+                  <h4><b>{{$user->name}}</b></h4>
+                  <p>
+                    From: {{$user->city}}
+                    <br>
+                    Blood Type: {{$user->blood_type}}
+                  </p>
+                  <br>
+                  <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+                </figcaption>	
+              </figure>
             </div>
-          </a>
-        </div>
         @endif
         @endforeach
+
         @foreach ($users as $user)
         @if ($user->blood_type=="AB+")  
-        <div class="col-lg-3 col-md-6 blood-type-item filter-AB-Pos">
-          <a href="">
-            <img src="{{ asset("storage/users/$user->img") }}" alt="">
-            <div class="details">
-              <h4> Name : {{$user->name}}</h4>
-              <span> Blood Type: {{$user->blood_type}}</span>
-            </div>
-          </a>
-        </div>
+        <div class="col-lg-4 col-md-6 blood-type-item filter-AB-Pos">
+            <figure class="snip0016">
+              <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+              <figcaption>
+                <h4><b>{{$user->name}}</b></h4>
+                <p>
+                  From: {{$user->city}}
+                  <br>
+                  Blood Type: {{$user->blood_type}}
+                </p>
+                <br>
+                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+              </figcaption>	
+            </figure>
+          </div>
         @endif
         @endforeach
+
         @foreach ($users as $user)
         @if ($user->blood_type=="AB-")  
-        <div class="col-lg-3 col-md-6 blood-type-item filter-AB-Neg">
-          <a href="">
-            <img src="{{ asset("storage/users/$user->img") }}" alt="">
-            <div class="details">
-              <h4> Name : {{$user->name}}</h4>
-              <span> Blood Type: {{$user->blood_type}}</span>
-            </div>
-          </a>
-        </div>
+        <div class="col-lg-4 col-md-6 blood-type-item filter-AB-Neg">
+            <figure class="snip0016">
+              <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+              <figcaption>
+                <h4><b>{{$user->name}}</b></h4>
+                <p>
+                  From: {{$user->city}}
+                  <br>
+                  Blood Type: {{$user->blood_type}}
+                </p>
+                <br>
+                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+              </figcaption>	
+            </figure>
+          </div>
         @endif
         @endforeach
       </div><!-- End profile of Donors users in blood filter --->
+      {{ $users->links() }}
     </div>  
   </section><!--------------------------****************** End Blood Type section ***************---------------->
   <section id="facts"><!----------------******** start fact section ********------------->
@@ -319,7 +374,7 @@
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message" required></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            <div class="text-center"><button type="submit" onclick="alert('Message sent'); reset();">Send Message</button></div>
           </form>
           
         </div><!---- End contact us form ----> 

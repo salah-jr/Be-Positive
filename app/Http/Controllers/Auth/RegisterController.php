@@ -90,9 +90,11 @@ class RegisterController extends Controller
             'city' => $data['city'],
             'gender' => $data['gender'],
             'birthdate' => $data['birthdate'],
+            'avatar' =>  "users/".$fileNameToStore,
             'img' =>  $fileNameToStore
         ]);
     
        
     }
+    
 }

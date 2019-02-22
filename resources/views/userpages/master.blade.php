@@ -25,6 +25,7 @@
 		<link href="{{asset('sitecss/css/modal.css')}}" rel="stylesheet">
 		<link href="{{asset('sitecss/css/profile.css.css')}}" rel="stylesheet">
 		<link href="{{asset('sitecss/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
+
 	</head>
 	<body>        
 											<!------------------------------------- start header------------------------------>
