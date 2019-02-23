@@ -25,7 +25,23 @@
 		<link href="{{asset('sitecss/css/modal.css')}}" rel="stylesheet">
 		<link href="{{asset('sitecss/css/profile.css.css')}}" rel="stylesheet">
 		<link href="{{asset('sitecss/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+		{{-- <script>
 
+			// Enable pusher logging - don't include this in production
+			Pusher.logToConsole = true;
+
+			var pusher = new Pusher('90b736361c3daba8be62', {
+			cluster: 'eu',
+			forceTLS: true
+			});
+
+			var channel = pusher.subscribe('my-channel');
+			channel.bind('form-submitted', function(data) {
+			alert(JSON.stringify(data));
+			});
+		</script> --}}
 	</head>
 	<body>        
 											<!------------------------------------- start header------------------------------>
@@ -58,7 +74,7 @@
 							</a>
 							<ul>
 								<li>
-									<a href="/profile">View profile</a>
+									<a href="/profile/{{Auth::user()->id}}">View profile</a>
 								</li>
 								<li>
 									<a href="{{ route('logout') }}"

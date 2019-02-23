@@ -32,8 +32,27 @@
 	<link href="{{asset('sitecss/css/mainStyle.css')}}" rel="stylesheet">
 	<link href="{{asset('sitecss/css/modal.css')}}" rel="stylesheet">
 	<link href="{{asset('sitecss/css/profile.css')}}" rel="stylesheet">
-	<link href="{{asset('sitecss/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
-                    <!------------------------------------- start header profile page ------------------------------>
+    <link href="{{asset('sitecss/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+     <script>
+
+			// Enable pusher logging - don't include this in production
+			Pusher.logToConsole = true;
+
+			var pusher = new Pusher('90b736361c3daba8be62', {
+			cluster: 'eu',
+			forceTLS: true
+			});
+
+			var channel = pusher.subscribe('my-channel');
+			channel.bind('form-submitted', function(data) {
+			alert(JSON.stringify(data));
+            });
+            
+	</script>
+    <body> 
+    <!------------------------------------- start header profile page ------------------------------>
     <header id="header">
         <div class="container">
             <div id="logo" class="pull-left">
@@ -43,8 +62,8 @@
                 <ul class="nav-menu">
                     <li>                                <!-- start  dropdown profile image -->
                         <div class='profile-pic d-flex justify-content-start mr-3' data-toggle="dropdown">
-                            <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img mr-1" alt="user" width="50px" height="50px">
-                            <p class="profile-userName pr-2"> Ahmed</p>
+                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img mr-1" alt="user" width="30px" height="30px">
+                            <p class="profile-userName pr-2"> {{$user->name}}</p>
                         </div>
                         <div class="dropdown">
                             <div class="dropdown-menu profile-menu">
@@ -53,10 +72,6 @@
                                     <i class="material-icons">settings</i>
                                 </div>
                                 <div class="profile-body">
-                                    <a class="profile-body-items d-flex justify-content-start pt-1">
-                                        <i class='fas fa-user m-2'></i>
-                                        <p class="m-1">Edit Profile</p>
-                                    </a>
                                     <a class="profile-body-items d-flex justify-content-start pt-1">
                                         <i class='fas fa-user m-2'></i>
                                         <p class="m-1">Edit Profile</p>
@@ -79,7 +94,7 @@
                             </div>
                         </div>
                     </li>                            <!-- End  dropdown profile image -->
-                    <li><a href="#blood-type">Home</a></li>
+  
                     <li>                          <!-- start  dropdown Notifications Bell -->
                         <span class="badge badge-important dropdown-toggle" data-toggle="dropdown">2</span>
                         <i class='fa fa-bell-o fa-lg dropdown-toggle' data-toggle="dropdown"></i>
@@ -92,17 +107,17 @@
                                 <div class="notification-body">
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
                                             <a href="" class="d-flex flex-column">
                                                 <p class="p-2">
-                                                    <span class="pl-1">Amira</span> send notification to you</p>
+                                                    <span class="pl-1">Name</span> send notification to you</p>
                                                     <p class="notification-time">20:8 pm</p>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
                                             <a  href="" class="d-flex flex-column">
                                                 <p class="p-2">
                                                     <span class="pl-1">Amira</span> send notification to you</p>
@@ -112,7 +127,18 @@
                                     </div>
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <a  href="" class="d-flex flex-column">
+                                                <p class="p-2">
+                                                    <span class="pl-1">Amira</span> send notification to you</p>
+                                                    <p class="notification-time">20:8 pm</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="notification-recieved">
+                                        <div class="d-flex justify-content-start pt-1">
+                                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
                                             <a href="" class="d-flex flex-column">
                                                 <p class="p-2">
                                                     <span class="pl-1">Amira</span> send notification to you</p>
@@ -122,7 +148,7 @@
                                     </div>
                                 </div>
                                 <a class="notification-footer">
-                                    <div>See All Notifications</div>
+                                    <div></div>
                                 </a>
                             </div>
                         </div>
@@ -131,12 +157,12 @@
             </nav>                                                 <!------- End nav -------->
         </div>
     </header>              <!------------------------------------- End header profile page ------------------------------>
-    <br><br><br><br>
+    <br><br>
     <div class="container container-profile">  <!------------------------------------- Start  profile container ------------------------------>
         <div class="row">
             <div class="col-sm-3">
                 <div class="profile-image">
-                    <img src="{{asset('sitecss/img/team-2.jpg')}}" class="img-responsive rounded account-img" alt="user" width="200px" height="200px">
+                    <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded account-img" alt="user" width="200px" height="200px">
                 </div><br>
                 <div>
                     <p class="text-center mt-5">Blood Donation</p>
@@ -146,7 +172,7 @@
                         </div>
                         
                         <div class="footer">
-                            <p>January 1, 2016</p>
+                            <p>Member since, {{$user->created_at->format('m/d/y')}}</p>
                         </div>
                     </div>
                 </div>
@@ -158,34 +184,40 @@
                     <div class="mt-5">
                         <div class="d-flex justify-content-between odd p-2">
                             <p>Name</p>
-                            <p class="valueOfInfo">Amira</p>
+                            <p class="valueOfInfo">{{$user->name}}</p>
                         </div>
                         <div class="d-flex justify-content-between p-2">
-                            <p>USer Name</p>
-                            <p class="valueOfInfo">Amira Mohsen</p>
+                            <p>Username</p>
+                            <p class="valueOfInfo">{{$user->username}}</p>
                         </div>
                         <div class="d-flex justify-content-between odd p-2">
                             <p>Age</p>
-                            <p class="valueOfInfo">20 </p>
+                            <p class="valueOfInfo">{{$user->birthdate}}</p>
                         </div>
                         <div class="d-flex justify-content-between p-2">
                             <p>Blood</p>
-                            <p class="valueOfInfo">AB+</p>
+                            <p class="valueOfInfo">{{$user->blood_type}}</p>
                         </div>
                         <div class="d-flex justify-content-between odd p-2">
                             <p>Phone</p>
-                            <p class="valueOfInfo">01022553367</p>
+                            <p class="valueOfInfo">{{$user->phone}}</p>
                         </div>
                         <div class="d-flex justify-content-between p-2">
                             <p>City</p>
-                            <p class="valueOfInfo">Alex</p>
+                            <p class="valueOfInfo">{{$user->city}}</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>        
+        </div>
+        <div class="pull-right">
+        <a class="btn btn-secondary text-white" href="/edit/{{$user->id}}">Edit</a>
+            <form action="/delete/{{$user->id}}" method="DELETE" style="display: inline-block">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
         </div>
     </div> <!------------------------------------- End profile container ------------------------------>
-    <br>
+    <br><br><br>
 
 <!--==========================
     Footer

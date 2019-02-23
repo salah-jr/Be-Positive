@@ -96,7 +96,11 @@
                   Blood Type: {{$user->blood_type}}
                 </p>
                 <br>
-                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+                <form action="/connect/{{$user->id}}" method="post">
+                  {{ csrf_field() }}
+                  <a><button type="submit" class="btn btn-sm"> Connect </button></a>
+                </form>
+                {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
               </figcaption>	
             </figure>
           </div>
