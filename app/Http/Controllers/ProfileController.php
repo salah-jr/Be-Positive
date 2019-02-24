@@ -19,10 +19,11 @@ class ProfileController extends Controller
         $user = User::find($id);
         $user->birthdate = ProfileController::calculateAge($user->birthdate);
         return view('userpages.profile')->with('user',$user);
+        // return view('userpages.profile')->with('notifications',$user->notifications);
     }
     public function destroy($id){
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $user->delete();
-        return redirect('/');
+        return redirect::route('/login');
     }
 }

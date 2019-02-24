@@ -35,22 +35,7 @@
     <link href="{{asset('sitecss/css/dropdownNotificationAndProfile.css')}}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
-     <script>
-
-			// Enable pusher logging - don't include this in production
-			Pusher.logToConsole = true;
-
-			var pusher = new Pusher('90b736361c3daba8be62', {
-			cluster: 'eu',
-			forceTLS: true
-			});
-
-			var channel = pusher.subscribe('my-channel');
-			channel.bind('form-submitted', function(data) {
-			alert(JSON.stringify(data));
-            });
-            
-	</script>
+     <script src="{{asset('sitecss/js/profile.js')}}"></script>
     <body> 
     <!------------------------------------- start header profile page ------------------------------>
     <header id="header">
@@ -72,21 +57,13 @@
                                     <i class="material-icons">settings</i>
                                 </div>
                                 <div class="profile-body">
-                                    <a class="profile-body-items d-flex justify-content-start pt-1">
+                                <a href="" class="profile-body-items d-flex justify-content-start pt-1">
                                         <i class='fas fa-user m-2'></i>
                                         <p class="m-1">Edit Profile</p>
                                     </a>
                                     <hr>
-                                    <a class="profile-body-items d-flex justify-content-start pt-1">
-                                        <i class=' fa fa-question-circle m-2'></i>
-                                        <p class="m-1">Help</p>
-                                    </a>
-                                    <a class="profile-body-items d-flex justify-content-start pt-1">
-                                        <i class='fas fa-bullhorn m-2'></i>
-                                        <p class="m-1">Rebort a Problem</p>
-                                    </a>
-                                    <hr>
-                                    <a class="profile-body-items d-flex justify-content-start pt-1">
+                                   
+                                    <a href="" class="profile-body-items d-flex justify-content-start pt-1">
                                         <i class="material-icons">exit_to_app</i>
                                         <p class="m-1">Log Out</p>
                                     </a>
@@ -96,7 +73,7 @@
                     </li>                            <!-- End  dropdown profile image -->
   
                     <li>                          <!-- start  dropdown Notifications Bell -->
-                        <span class="badge badge-important dropdown-toggle" data-toggle="dropdown">2</span>
+                        <span class="badge badge-important dropdown-toggle" data-toggle="dropdown" id="notificationCount">0</span>
                         <i class='fa fa-bell-o fa-lg dropdown-toggle' data-toggle="dropdown"></i>
                         <div class="dropdown">
                             <div class="dropdown-menu notification-menu">
@@ -104,52 +81,26 @@
                                     <p>Notifications</p>
                                     <i class="material-icons">settings</i>
                                 </div>
+                  
+                               
                                 <div class="notification-body">
+                                    {{-- @if (count($notifications)>0)
+                                    @foreach ($notifications as $note) --}}
                                     <div class="notification-recieved">
                                         <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
+                                            <img src="{{asset("storage/users/defaultt.png")}}" id="usersender" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
                                             <a href="" class="d-flex flex-column">
-                                                <p class="p-2">
-                                                    <span class="pl-1">Name</span> send notification to you</p>
-                                                    <p class="notification-time">20:8 pm</p>
+                                                <p class="p-2" id="demo"><span class="pl-1"></span>Empty</p>
+                                                <p class="notification-time" id="dateTime"></p>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="notification-recieved">
-                                        <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
-                                            <a  href="" class="d-flex flex-column">
-                                                <p class="p-2">
-                                                    <span class="pl-1">Amira</span> send notification to you</p>
-                                                    <p class="notification-time">20:8 pm</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="notification-recieved">
-                                        <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
-                                            <a  href="" class="d-flex flex-column">
-                                                <p class="p-2">
-                                                    <span class="pl-1">Amira</span> send notification to you</p>
-                                                    <p class="notification-time">20:8 pm</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="notification-recieved">
-                                        <div class="d-flex justify-content-start pt-1">
-                                            <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded-circle account-img pl-1" alt="user" width="40px" height="40px">
-                                            <a href="" class="d-flex flex-column">
-                                                <p class="p-2">
-                                                    <span class="pl-1">Amira</span> send notification to you</p>
-                                                    <p class="notification-time">20:8 pm</p>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    {{-- @endforeach
+                                    @endif --}}
                                 </div>
-                                <a class="notification-footer">
-                                    <div></div>
-                                </a>
+                                
+                                    <div><a href="/notification/{{$user->id}}" class="notification-footer text-white">See Old notifications</div></a>
+                                
                             </div>
                         </div>
                     </li>                                     <!--End  dropdown Notifications Bell -->
@@ -160,7 +111,7 @@
     <br><br>
     <div class="container container-profile">  <!------------------------------------- Start  profile container ------------------------------>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-md-4 col-sm-3">
                 <div class="profile-image">
                     <img src="{{asset("storage/users/$user->img")}}" class="img-responsive rounded account-img" alt="user" width="200px" height="200px">
                 </div><br>
@@ -178,7 +129,7 @@
                 </div>
                    
             </div>
-            <div class="col-sm-9 mt-3">
+            <div class="col-md-8 col-sm-9 mt-3">
                 <div class="myInfo">
                     <h2> My Information</h2>
                     <div class="mt-5">
@@ -210,12 +161,13 @@
                 </div>
             </div>        
         </div>
+        @if(!Auth::guest())
         <div class="pull-right">
-        <a class="btn btn-secondary text-white" href="/edit/{{$user->id}}">Edit</a>
             <form action="/delete/{{$user->id}}" method="DELETE" style="display: inline-block">
-                <input type="submit" value="Delete" class="btn btn-danger">
+                <input type="submit" value="Delete Me" class="btn btn-danger">
             </form>
         </div>
+        @endif
     </div> <!------------------------------------- End profile container ------------------------------>
     <br><br><br>
 

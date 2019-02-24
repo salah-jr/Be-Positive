@@ -57,13 +57,22 @@
                   Blood Type: {{$user->blood_type}}
                 </p>
                 <br>
-                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+                @if(Auth::guest())
+                <a href="/register"><button class="btn btn-sm"> Connect </button></a>
+                @else
+                <form action="/connect/{{Auth::user()->id}}" method="post">
+                  {{ csrf_field() }}
+                  <a><button type="submit" class="btn btn-sm"> Connect </button></a>
+                </form>
+                @endif
+                {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
               </figcaption>	
             </figure>
           </div>
         @endif
         @endforeach
-        @foreach ($users as $user)
+
+               @foreach ($users as $user)
         @if ($user->blood_type=="O-")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-O-Neg">
             <figure class="snip0016">
@@ -76,7 +85,15 @@
                   Blood Type: {{$user->blood_type}}
                 </p>
                 <br>
-                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+                @if(Auth::guest())
+                <a href="/register"><button class="btn btn-sm"> Connect </button></a>
+                @else
+                <form action="/connect/{{Auth::user()->id}}" method="post">
+                  {{ csrf_field() }}
+                  <a><button type="submit" class="btn btn-sm"> Connect </button></a>
+                </form>
+                @endif
+                {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
               </figcaption>	
             </figure>
           </div>
@@ -96,10 +113,14 @@
                   Blood Type: {{$user->blood_type}}
                 </p>
                 <br>
-                <form action="/connect/{{$user->id}}" method="post">
+                @if(Auth::guest())
+                <a href="/register"><button class="btn btn-sm"> Connect </button></a>
+                @else
+              <form action="/connect/{{Auth::user()->id}}/{{$user->id}}" method="post">
                   {{ csrf_field() }}
                   <a><button type="submit" class="btn btn-sm"> Connect </button></a>
                 </form>
+                @endif
                 {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
               </figcaption>	
             </figure>
@@ -120,7 +141,15 @@
                   Blood Type: {{$user->blood_type}}
                 </p>
                 <br>
-                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+                @if(Auth::guest())
+                <a href="/register"><button class="btn btn-sm"> Connect </button></a>
+                @else
+                <form action="/connect/{{Auth::user()->id}}" method="post">
+                  {{ csrf_field() }}
+                  <a><button type="submit" class="btn btn-sm"> Connect </button></a>
+                </form>
+                @endif
+                {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
               </figcaption>	
             </figure>
           </div>
@@ -140,7 +169,15 @@
                   Blood Type: {{$user->blood_type}}
                 </p>
                 <br>
-                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+                @if(Auth::guest())
+                <a href="/register"><button class="btn btn-sm"> Connect </button></a>
+                @else
+                <form action="/connect/{{Auth::user()->id}}" method="post">
+                  {{ csrf_field() }}
+                  <a><button type="submit" class="btn btn-sm"> Connect </button></a>
+                </form>
+                @endif
+                {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
               </figcaption>	
             </figure>
           </div>
@@ -148,26 +185,34 @@
         @endforeach
 
         @foreach ($users as $user)
-          @if ($user->blood_type=="B-")  
-          <div class="col-lg-4 col-md-6 blood-type-item filter-B-Neg">
-              <figure class="snip0016">
-                <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
-                <figcaption>
-                  <h4><b>{{$user->name}}</b></h4>
-                  <p>
-                    From: {{$user->city}}
-                    <br>
-                    Blood Type: {{$user->blood_type}}
-                  </p>
+        @if ($user->blood_type=="B-")  
+        <div class="col-lg-4 col-md-6 blood-type-item filter-B-Neg">
+            <figure class="snip0016">
+              <img src="{{ asset("storage/users/$user->img") }}" alt="sample41"/>
+              <figcaption>
+                <h4><b>{{$user->name}}</b></h4>
+                <p>
+                  From: {{$user->city}}
                   <br>
-                  <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
-                </figcaption>	
-              </figure>
-            </div>
+                  Blood Type: {{$user->blood_type}}
+                </p>
+                <br>
+                @if(Auth::guest())
+                <a href="/register"><button class="btn btn-sm"> Connect </button></a>
+                @else
+                <form action="/connect/{{Auth::user()->id}}" method="post">
+                  {{ csrf_field() }}
+                  <a><button type="submit" class="btn btn-sm"> Connect </button></a>
+                </form>
+                @endif
+                {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
+              </figcaption>	
+            </figure>
+          </div>
         @endif
         @endforeach
 
-        @foreach ($users as $user)
+                @foreach ($users as $user)
         @if ($user->blood_type=="AB+")  
         <div class="col-lg-4 col-md-6 blood-type-item filter-AB-Pos">
             <figure class="snip0016">
@@ -180,7 +225,15 @@
                   Blood Type: {{$user->blood_type}}
                 </p>
                 <br>
-                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+                @if(Auth::guest())
+                <a href="/register"><button class="btn btn-sm"> Connect </button></a>
+                @else
+                <form action="/connect/{{Auth::user()->id}}" method="post">
+                  {{ csrf_field() }}
+                  <a><button type="submit" class="btn btn-sm"> Connect </button></a>
+                </form>
+                @endif
+                {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
               </figcaption>	
             </figure>
           </div>
@@ -200,7 +253,15 @@
                   Blood Type: {{$user->blood_type}}
                 </p>
                 <br>
-                <a href="/connect"><button class="btn btn-sm"> Connect </button></a>
+                @if(Auth::guest())
+                <a href="/register"><button class="btn btn-sm"> Connect </button></a>
+                @else
+                <form action="/connect/{{Auth::user()->id}}" method="post">
+                  {{ csrf_field() }}
+                  <a><button type="submit" class="btn btn-sm"> Connect </button></a>
+                </form>
+                @endif
+                {{-- <a href="/connect"><button class="btn btn-sm"> Connect </button></a> --}}
               </figcaption>	
             </figure>
           </div>

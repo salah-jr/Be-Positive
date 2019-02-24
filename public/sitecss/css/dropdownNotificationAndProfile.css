@@ -18,7 +18,7 @@
   color:var(--blackcolor)!important;
 }
 .dropdown-menu{
-  height: 300px;
+  height: auto;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -59,7 +59,10 @@
   font-weight: bolder;
   font-size:13px;
   margin:2% 0;
-  text-align: end;
+  text-align: left;
+}
+.notification-time {
+  opacity: 0.5;
 }
 .notification-menu .notification-footer{
   background-color: var(--mainColor);
@@ -76,4 +79,7 @@
   .notification-menu,.profile-menu{box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0); }
   .profile-menu{top:-77px!important;}
   .notification-menu{top:-28px!important;}
+}
+.accept{
+  display: inline-block;
 }

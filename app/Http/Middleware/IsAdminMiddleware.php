@@ -13,18 +13,14 @@ class IsAdminMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+   
+  public function handle($request, Closure $next)
+  {
+    if(Auth::user()->id != $request->get('id'))
     {
-
-        if (Auth::user()->role == 0)
-        { 
-            return redirect('/');
-        }
-        elseif (Auth::user()->role == 2)
-        {
-            return redirect('charity');
-        }
-        else
-           return $next($request);
+      dd("you are not allowed to see this");
     }
+
+    return $next($request);
+  } 
 }
