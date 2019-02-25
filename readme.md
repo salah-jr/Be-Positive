@@ -1,7 +1,7 @@
 
 ## Run project locally
 
-- Clone Project
+- Clone the project
 - Run (compser install) in the project terminal.
 - Make your DB (in our project called B+)
 - Run (php artisan migrate)
