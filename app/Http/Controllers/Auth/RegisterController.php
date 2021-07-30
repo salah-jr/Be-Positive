@@ -6,6 +6,7 @@ use App\User;
 use Hash;
 use DateTime;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Input;
@@ -54,7 +55,7 @@ class RegisterController extends Controller
         //Store to public path
         $imagePath = Input::file('image')->move(base_path().'/public/storage/users/', $fileNameToStore);
         
-        $age = RegisterController::calculateAge($data['birthdate']);
+        $age = Carbon::parse($data['birthdate'])->diff(Carbon::now())->y;
         
         return User::create([
             'name'=> $data['name'],
